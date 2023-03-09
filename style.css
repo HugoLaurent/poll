@@ -7,6 +7,8 @@
 
 body {
     font-family: 'Patrick Hand SC', cursive;
+
+    box-sizing: content-box;
     
     border: 6px solid black;
     border-top-left-radius: 255px 15px ;
@@ -40,11 +42,21 @@ header nav ul {
 header nav ul li {
     list-style-type: none;
     cursor: pointer;
-}
-
-header nav ul li:hover {
+    padding: .5rem;
+    transition: box-shadow .5s ease;
+    box-shadow: 0 0 0 0 black;
+    border-top-left-radius: 255px 15px ;
+    border-top-right-radius: 15px 225px;
+    border-bottom-left-radius: 225px 15px;
+    border-bottom-right-radius: 15px 255px;
+    outline-offset: -4px;
+  }
+  
+  header nav ul li:hover {
     font-weight: bolder;
-}
+    box-shadow: 0 0 0 4px rgb(0, 0, 0);
+    outline-offset: -2px;
+  }
 
 /* POLL'S DESIGN */
 
