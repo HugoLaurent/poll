@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
+
+:root {
+    --top-bar: #00b894;
+    --bottom-bar: #e17055;
+  }
+
+body {
+    font-family: 'Patrick Hand SC', cursive;
+    
+    border: 6px solid black;
+    border-top-left-radius: 255px 15px ;
+    border-top-right-radius: 15px 225px;
+    border-bottom-left-radius: 225px 15px;
+    border-bottom-right-radius: 15px 255px;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 4rem;
+    cursor: pointer;
+    letter-spacing: .1rem;
+}
+
+header nav {
+    font-size: 2rem;
+}
+
+header nav ul {
+    display: flex;
+    gap: 4rem;
+}
+
+header nav ul li {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+header nav ul li:hover {
+    font-weight: bolder;
+}
+
+/* POLL'S DESIGN */
+
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.poll {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.poll p {
+    font-size: 1.5rem;
+}
+
+article p {
+    font-size: 2rem;
+    margin: 0;
+}
+
+main article {
+    padding: 1rem 1.5rem;
+    margin: 1rem;
+    min-width: 40%;
+    max-width: fit-content;
+}
+
+main h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+article {
+    border: 6px solid black;
+}
+  
+.progressbar-wrapper {
+    display: flex;
+    flex: 1;
+    background-color: #dfe6e9;
+    color: white;
+    border-radius: 15px;
+    max-width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.349);
+    border-top-left-radius: 255px 15px ;
+    border-top-right-radius: 15px 225px;
+    border-bottom-left-radius: 225px 15px;
+    border-bottom-right-radius: 15px 255px;
+
+    margin: 1rem;
+}
+
+.wrapper-all-progress {
+    display: flex;
+    align-items: center;
+}
+
+.progressbar {
+    background-color: var(--bottom-bar);
+    color: white;
+    padding: 1rem;
+    text-align: right;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.progressbar[title="first_choice"] {
+    background-color: var(--top-bar);
+}
+
+.progressbar[title="second_choice"] {
+    background-color: var(--bottom-bar);
+}
+
+.first_choice {
+    width: 70%;
+}
+
+.second_choice {
+    width: 30%;
+}
+
