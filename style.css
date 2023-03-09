@@ -86,6 +86,7 @@ main article {
     margin: 1rem;
     min-width: 40%;
     max-width: fit-content;
+    flex: 1;
 }
 
 main h2 {

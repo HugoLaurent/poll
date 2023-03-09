@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "postgres": "^3.3.4",
+    "psql": "^0.0.1"
+  }
+}
