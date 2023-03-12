@@ -58,6 +58,10 @@ header nav ul li {
     outline-offset: -2px;
   }
 
+  a {
+    color: black;
+  }
+
 /* POLL'S DESIGN */
 
 main {
