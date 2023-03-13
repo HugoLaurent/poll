@@ -283,6 +283,10 @@ footer div {
     margin-right: 2rem;
 }
 
+.footer-article p {
+    font-size: 1.8rem;
+}
+
 footer div button {
     font-size: 2rem;
     border: 2px solid black;
