@@ -4,38 +4,9 @@ const toggle = document.querySelector('.dayNight');
 const buttonNav = document.querySelectorAll('a')
 const hoverNav = document.querySelectorAll('li')
 const images = document.querySelectorAll('img')
-console.log(toggle.checked);
-// const pollType = 
-// `
-// <div class="poll">
-//     <h2>Titre du poll</h2>
-//     <p classname="author">Author</p>
-// </div>
-// <p>A question about the poll</p>
-// <section class="polls">
-//     <div class="wrapper-all-progress">
-//         <div class="progressbar-wrapper">
-//             <input type="checkbox" name="first_choice" id="first">
-//             <div title="first_choice" class="progressbar first_choice">
-//             </div>
-//         </div>
-//         <span>70%</span>
-//     </div>
-//     <div class="wrapper-all-progress">
-//         <div class="progressbar-wrapper">
-//             <input type="checkbox" name="second_choice" id="second">
-//             <div title="second_choice" class="progressbar second_choice">
-//             </div>
-//         </div>
-//         <span>30%</span>
-//     </div>
-// </section>
-// `
-
-// function addAPoll () {
-//     const newPoll = document.createElement('article')
-//     mainDiv.appendChild(newPoll).innerHTML = pollType
-// }
+const signUp = document.querySelector('.sign')
+const signUpForm = document.querySelector('.sign-up')
+const signUpFormClose = document.querySelector('.to-close')
 
 // FOR RANDOM BORDER ON EACH POLLS
 
@@ -88,3 +59,11 @@ toggle.addEventListener('click', () => {
         image.classList.toggle('dark-img')
     })
 });
+
+signUp.addEventListener('click', () => {
+    signUpForm.classList.toggle('sign-up__pop-up')
+})
+
+signUpFormClose.addEventListener('click', () => {
+    signUpForm.classList.toggle('sign-up__pop-up')
+})
