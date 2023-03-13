@@ -1,5 +1,7 @@
 const mainDiv = document.querySelector('main');
-
+const body = document.querySelector('body');
+const toggle = document.querySelector('.dayNight');
+console.log(toggle.checked);
 // const pollType = 
 // `
 // <div class="poll">
@@ -66,4 +68,11 @@ checkboxes.forEach((checkbox) => {
     });
 });
 
+// DAY OR NIGHT 
 
+toggle.addEventListener('click', () => {
+    body.classList.toggle('dark-body')
+    articles.forEach((article) => {
+        article.classList.toggle('dark-body')
+    })
+});

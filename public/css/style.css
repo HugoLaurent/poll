@@ -269,3 +269,11 @@ article {
     outline-offset: -2px;
 }
 
+/* DAYR OR NIGHT */
+
+.dark-body{
+    background-color: #000000;
+    color: white;
+    border: 3px solid white;
+}
+
