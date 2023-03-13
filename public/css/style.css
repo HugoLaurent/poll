@@ -9,7 +9,7 @@ body {
     font-family: 'Patrick Hand SC', cursive;
 
     box-sizing: content-box;
-    
+    background-color: #ece8ef;
     border: 6px solid black;
     border-top-left-radius: 255px 15px ;
     border-top-right-radius: 15px 225px;
@@ -64,6 +64,10 @@ header nav ul li {
     outline-offset: -2px;
   }
 
+  header nav a {
+    color: #000000;
+  }
+
 /* CHECK NIGHT OR DAY */
 
 .dayNight[type=checkbox]{
@@ -106,9 +110,7 @@ label:after {
 
 
 
-a {
-color: black;
-}
+
 
 /* POLL'S DESIGN */
 
@@ -152,6 +154,7 @@ main h2 {
 }
 
 article {
+    background-color: whitesmoke;
     border: 6px solid black;
 }
   
@@ -250,7 +253,7 @@ article {
 
 .footer-article button {
     border: none;
-    background-color: #fff;
+    background-color: whitesmoke;
     cursor: pointer;
     transition: box-shadow .5s ease;
     box-shadow: 0 0 0 0 black;
@@ -272,8 +275,24 @@ article {
 /* DAYR OR NIGHT */
 
 .dark-body{
-    background-color: #000000;
+    background-color: #0f0f0f;
     color: white;
     border: 3px solid white;
+}
+
+.dark-article {
+    background-color: #272727;
+}
+
+.dark-a {
+    color:#F4DADB
+}
+
+.dark-hover {
+    box-shadow: 0 0 0 0 rgb(255, 255, 255);
+}
+
+.dark-hover:hover {
+    box-shadow: 0 0 0 4px rgb(255, 254, 254);
 }
 

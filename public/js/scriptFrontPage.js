@@ -1,6 +1,8 @@
 const mainDiv = document.querySelector('main');
 const body = document.querySelector('body');
 const toggle = document.querySelector('.dayNight');
+const buttonNav = document.querySelectorAll('a')
+const hoverNav = document.querySelectorAll('li')
 console.log(toggle.checked);
 // const pollType = 
 // `
@@ -73,6 +75,12 @@ checkboxes.forEach((checkbox) => {
 toggle.addEventListener('click', () => {
     body.classList.toggle('dark-body')
     articles.forEach((article) => {
-        article.classList.toggle('dark-body')
+        article.classList.toggle('dark-article')
+    })
+    buttonNav.forEach((button) => {
+        button.classList.toggle('dark-a')
+    })
+    hoverNav.forEach((hover) => {
+        hover.classList.toggle('dark-hover')
     })
 });
