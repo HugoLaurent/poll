@@ -3,6 +3,7 @@ const body = document.querySelector('body');
 const toggle = document.querySelector('.dayNight');
 const buttonNav = document.querySelectorAll('a')
 const hoverNav = document.querySelectorAll('li')
+const images = document.querySelectorAll('img')
 console.log(toggle.checked);
 // const pollType = 
 // `
@@ -82,5 +83,8 @@ toggle.addEventListener('click', () => {
     })
     hoverNav.forEach((hover) => {
         hover.classList.toggle('dark-hover')
+    })
+    images.forEach((image) => {
+        image.classList.toggle('dark-img')
     })
 });

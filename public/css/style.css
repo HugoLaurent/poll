@@ -57,8 +57,16 @@ header nav ul li {
     border-bottom-right-radius: 15px 255px;
     outline-offset: -4px;
   }
+
+  .dayNight {
+    display: none;
+  }
+
+  .input:hover {
+    box-shadow: 0 0 0 0 transparent;
+  }
   
-  header nav ul li:hover {
+  header nav ul li:hover:not(:last-child) {
     font-weight: bolder;
     box-shadow: 0 0 0 4px rgb(0, 0, 0);
     outline-offset: -2px;
@@ -78,7 +86,7 @@ header nav ul li {
 
 label {
     cursor: pointer;
-    text-indent: -9999px;
+    
     width: 70px;
     height: 40px;
     background: grey;
@@ -88,22 +96,23 @@ label {
 }
 
 label:after {
-    content: '';
+    content: '\002600';
     position: absolute;
-    top: 5px;
+    top: -3px;
     left: 5px;
     width: 30px;
     height: 30px;
-    background: #ffffff;
+    
     border-radius: 90px;
     transition: 0.3s;
 }
 
 
 .dayNight:checked + label:after {
+    content: '\1F319';
+    filter: grayscale(1);
     left: calc(100% - 5px);
-    transform: translateX(-100%);
-    background: #000000;
+    transform: translateX(-120%);
 }
 
 
@@ -272,7 +281,7 @@ article {
     outline-offset: -2px;
 }
 
-/* DAYR OR NIGHT */
+/* DAY OR NIGHT */
 
 .dark-body{
     background-color: #0f0f0f;
@@ -292,7 +301,11 @@ article {
     box-shadow: 0 0 0 0 rgb(255, 255, 255);
 }
 
-.dark-hover:hover {
+.dark-hover:hover:not(:last-child) {
     box-shadow: 0 0 0 4px rgb(255, 254, 254);
+}
+
+.dark-img {
+    filter: invert(1);
 }
 
