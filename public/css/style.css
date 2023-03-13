@@ -33,6 +33,7 @@ header h1 {
     font-size: 4rem;
     cursor: pointer;
     letter-spacing: .1rem;
+    margin: 0;
 }
 
 header nav {
@@ -115,18 +116,13 @@ label:after {
     transform: translateX(-120%);
 }
 
-
-
-
-
-
-
 /* POLL'S DESIGN */
 
 main {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+
 }
 
 .poll {
@@ -136,6 +132,7 @@ main {
 }
 
 .category-title {
+    margin: 0;
     margin-left: 2rem;
 }
 
@@ -177,8 +174,9 @@ article {
     border: 2px solid rgba(0, 0, 0, 0.349);
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    
+    height: 40px;
     margin: 1rem;
+    margin: .5rem .5rem;
 }
 
 .validatePoll[type="checkbox"] {
@@ -193,16 +191,14 @@ article {
     cursor: pointer;
   }
 
-  .validatePoll[type="checkbox"]:checked::before {
+.validatePoll[type="checkbox"]:checked::before {
     content: "\2713";
     display: block;
     text-align: center;
     line-height: 20px;
     font-size: 2rem;
     font-weight: bold;
-  }
-
-  
+}
 
 .wrapper-all-progress {
     display: flex;
@@ -217,7 +213,7 @@ article {
 .progressbar {
     background-color: #D3E9E3;
     color: white;
-    padding: 1rem;
+    padding-left: 1rem;
     text-align: right;
     font-size: 20px;
     border-bottom-right-radius: 15px;
@@ -236,8 +232,6 @@ article {
     background-color: #F4DADB;
     border: 3px solid #e17055;
 }
-
-
 
 .progressbar p {
     font-size: 1.5rem;
@@ -279,6 +273,37 @@ article {
 .footer-article button:hover {
     box-shadow: 0 0 0 4px rgb(0, 0, 0);
     outline-offset: -2px;
+}
+
+/* FOOTER MAIN */
+
+footer div {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+}
+
+footer div button {
+    font-size: 2rem;
+    border: 2px solid black;
+    border-top-left-radius: 255px 15px ;
+    border-top-right-radius: 15px 225px;
+    border-bottom-left-radius: 225px 15px;
+    border-bottom-right-radius: 15px;
+    padding: 1rem;
+    margin: .5rem;
+    cursor: pointer;
+    font-family: 'Patrick Hand SC', cursive;
+    transition: all .5s;
+}
+
+footer div button:hover {
+    border: 2px solid black;
+    border-top-left-radius: 15px 255px ;
+    border-top-right-radius: 240px 25px;
+    border-bottom-left-radius: 22px 215px;
+    border-bottom-right-radius: 15px;
+    font-weight: bolder;
 }
 
 /* DAY OR NIGHT */
