@@ -1,0 +1,49 @@
+<%- include('./partials/header') %>
+   
+        <h1 class="category-title">Most Popular</h1>
+        <main>
+          <% for(const poll of polls) { %>
+            <article>
+                <div class="poll">
+                    <h2><%= poll.title %></h2>
+                    <p classname="author"><%= poll.author %></p>
+                </div>
+                <p><%= poll.question %></p>
+                <section class="polls">
+                    <div class="wrapper-all-progress">
+                        
+                        <input class="validatePoll" type="checkbox" name="choice" id="first">
+                        <div class="progressbar-wrapper">
+                            <div style="width: <%=poll.first_result%>%" title="first_choice" class="progressbar">
+                                <p><%= poll.choice_a %></p>
+                            </div>
+                        </div>
+                        <span class="choice"><%= poll.first_result%>%</span>
+                    </div>
+                    <div class="wrapper-all-progress">
+                        <input class="validatePoll" type="checkbox" name="choice" id="second">
+                        <div class="progressbar-wrapper">
+                            
+                            <div style="width: <%=poll.second_result%>%" title="second_choice" class="progressbar">
+                                <p><%= poll.choice_b %></p>
+                            </div>
+                        </div>
+                        <span><%= poll.second_result%>%</span>
+                    </div>
+                </section>
+                <div class="footer-article">
+                    <div class="share">
+                        <img src="/images/share.svg" alt="">
+                        <!-- <img src="/images/messenger.png" alt="">
+                        <img src="/images/twitter.png" alt="">
+                        <img src="/images/twitch.png" alt="">
+                        <img src="/images/discord.png" alt=""> -->
+                    </div>
+                    <button type="submit">Validate</button>
+                </div>
+            </article>
+      <% } %>
+    </main>
+
+   
+    <%- include('./partials/footer') %>   

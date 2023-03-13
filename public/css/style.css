@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
+
+:root {
+    --top-bar: #00b894;
+    --bottom-bar: #e17055;
+  }
+
+body {
+    font-family: 'Patrick Hand SC', cursive;
+
+    box-sizing: content-box;
+    background-color: #ece8ef;
+    border: 6px solid black;
+    border-top-left-radius: 255px 15px ;
+    border-top-right-radius: 15px 225px;
+    border-bottom-left-radius: 225px 15px;
+    border-bottom-right-radius: 15px 255px;
+}
+
+header {
+    display: flex;
+    margin-inline: 4rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header h1 {
+    font-size: 4rem;
+    cursor: pointer;
+    letter-spacing: .1rem;
+}
+
+header nav {
+    font-size: 2rem;
+}
+
+header nav ul {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+header nav ul li {
+    list-style-type: none;
+    cursor: pointer;
+    padding: .5rem;
+    transition: box-shadow .5s ease;
+    box-shadow: 0 0 0 0 black;
+    border-top-left-radius: 255px 15px ;
+    border-top-right-radius: 15px 225px;
+    border-bottom-left-radius: 225px 15px;
+    border-bottom-right-radius: 15px 255px;
+    outline-offset: -4px;
+  }
+
+  .dayNight {
+    display: none;
+  }
+
+  .input:hover {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  
+  header nav ul li:hover:not(:last-child) {
+    font-weight: bolder;
+    box-shadow: 0 0 0 4px rgb(0, 0, 0);
+    outline-offset: -2px;
+  }
+
+  header nav a {
+    color: #000000;
+  }
+
+/* CHECK NIGHT OR DAY */
+
+.dayNight[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    
+    width: 70px;
+    height: 40px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+label:after {
+    content: '\002600';
+    position: absolute;
+    top: -3px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+
+.dayNight:checked + label:after {
+    content: '\1F319';
+    filter: grayscale(1);
+    left: calc(100% - 5px);
+    transform: translateX(-120%);
+}
+
+
+
+
+
+
+
+/* POLL'S DESIGN */
+
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.poll {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.category-title {
+    margin-left: 2rem;
+}
+
+.poll p {
+    font-size: 1.5rem;
+}
+
+article p {
+    font-size: 3rem;
+    margin: 0;
+    margin-right: 1rem;
+}
+
+main article {
+    padding: 1rem 1.5rem;
+    margin: 1rem;
+    min-width: 40%;
+    max-width: fit-content;
+    flex: 1;
+}
+
+main h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+article {
+    background-color: whitesmoke;
+    border: 6px solid black;
+}
+  
+.progressbar-wrapper {
+    display: flex;
+    flex: 1;
+    background-color: #dfe6e9;
+    color: white;
+    border-radius: 15px;
+    max-width: 90%;
+    border: 2px solid rgba(0, 0, 0, 0.349);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+    margin: 1rem;
+}
+
+.validatePoll[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 15px;
+    border: 1px solid #111010;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  .validatePoll[type="checkbox"]:checked::before {
+    content: "\2713";
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  
+
+.wrapper-all-progress {
+    display: flex;
+    align-items: center;
+}
+
+.wrapper-all-progress span {
+    font-size: 2rem;
+    min-width: 60px;
+}
+
+.progressbar {
+    background-color: #D3E9E3;
+    color: white;
+    padding: 1rem;
+    text-align: right;
+    font-size: 20px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px; 
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    position: relative;
+}
+
+.progressbar[title="first_choice"] {
+    background-color: #D3E9E3;
+    border: 3px solid #00b894;
+}
+
+.progressbar[title="second_choice"] {
+    background-color: #F4DADB;
+    border: 3px solid #e17055;
+}
+
+
+
+.progressbar p {
+    font-size: 1.5rem;
+    color: black;
+    padding: 0;
+    margin: 0;
+    width: max-content;
+}
+
+.footer-article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    font-family: 'Patrick Hand SC', cursive;
+}
+
+.footer-article img {
+    width: 2rem;
+    cursor: pointer;
+}
+
+.footer-article button {
+    border: none;
+    background-color: whitesmoke;
+    cursor: pointer;
+    transition: box-shadow .5s ease;
+    box-shadow: 0 0 0 0 black;
+    border-top-left-radius: 255px 15px ;
+    border-top-right-radius: 15px 225px;
+    border-bottom-left-radius: 225px 15px;
+    border-bottom-right-radius: 15px 255px;
+    outline-offset: -4px;
+
+    font-size: 2rem;
+    font-family: 'Patrick Hand SC', cursive;
+}
+  
+.footer-article button:hover {
+    box-shadow: 0 0 0 4px rgb(0, 0, 0);
+    outline-offset: -2px;
+}
+
+/* DAY OR NIGHT */
+
+.dark-body{
+    background-color: #0f0f0f;
+    color: white;
+    border: 3px solid white;
+}
+
+.dark-article {
+    background-color: #272727;
+}
+
+.dark-a {
+    color:#F4DADB
+}
+
+.dark-hover {
+    box-shadow: 0 0 0 0 rgb(255, 255, 255);
+}
+
+.dark-hover:hover:not(:last-child) {
+    box-shadow: 0 0 0 4px rgb(255, 254, 254);
+}
+
+.dark-img {
+    filter: invert(1);
+}
+
