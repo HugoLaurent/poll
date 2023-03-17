@@ -365,7 +365,7 @@ footer div button:hover {
 .form__pop-up {
     visibility: visible;
     width: 80%;
-    height: 80%;
+    height: max-content;
     border-top-left-radius: 255px 15px;
     border-top-right-radius: 25px 240px;
     border-bottom-left-radius: 215px 22px;
@@ -486,7 +486,6 @@ form {
     .menu-image,
     .menu {
         display: block;
-        
     }
 
     .menu {
