@@ -1,13 +1,18 @@
-require("dotenv").config();
+require("dotenv/config");
 
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize(process.env.PG_URL, { // En 2eme paramètre, on peut mettre des options de connexion
-  define: { // Option de TOUS nos modèles
-    createdAt: "created_at", // Pour TOUS nos modèles, le champs createdAt, en base, se nomme "created_at"
-    updatedAt: "updated_at"
+// Ceci est une instance de connexion à la BDD Postgres (c'est notre "client")
+const sequelize = new Sequelize(process.env.PG_URL, {
+  dialect: "postgres",
+  define: {
+    createdAt: "created_at", // Dans notre table, le champ 'createdAt' s'appelle `create_at`
+    updatedAt: "updated_at" // Comme on va avoir plusieurs models, on peut aussi mettre cette liaison directement dans l'instance sequelize
   },
-  logging: (message) => { console.log(message); } // Permet de logger la requête SQL qui est effectivement passée par Sequelize à notre place
+  logging: false
 });
+
+// Note : même pas besoin de faire le `connect()`. Par défaut, il se connecte à la base.
+
 
 module.exports = sequelize;

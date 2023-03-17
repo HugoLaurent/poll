@@ -6,7 +6,8 @@
             <article>
                 <div class="poll">
                     <h2><%= poll.title %></h2>
-                    <p classname="author"><%= poll.author %></p>
+                    
+                    <p classname="author"><%= poll.author.pseudo %></p>
                 </div>
                 <p><%= poll.question %></p>
                 <section class="polls">
@@ -14,21 +15,21 @@
                         
                         <input class="validatePoll" type="checkbox" name="choice" id="first">
                         <div class="progressbar-wrapper">
-                            <div style="width: <%=poll.first_result%>%" title="first_choice" class="progressbar">
+                            <div style="width: <%=poll.result_a%>%" title="first_choice" class="progressbar">
                                 <p><%= poll.choice_a %></p>
                             </div>
                         </div>
-                        <span class="choice"><%= poll.first_result%>%</span>
+                        <span class="choice"><%= poll.result_a%>%</span>
                     </div>
                     <div class="wrapper-all-progress">
                         <input class="validatePoll" type="checkbox" name="choice" id="second">
                         <div class="progressbar-wrapper">
                             
-                            <div style="width: <%=poll.second_result%>%" title="second_choice" class="progressbar">
+                            <div style="width: <%=poll.result_b%>%" title="second_choice" class="progressbar">
                                 <p><%= poll.choice_b %></p>
                             </div>
                         </div>
-                        <span><%= poll.second_result%>%</span>
+                        <span><%= poll.result_b%>%</span>
                     </div>
                 </section>
                 <div class="footer-article">

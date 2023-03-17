@@ -13,9 +13,9 @@ const mainController = {
                     }
                 ]
             })
-         res.render("home", { polls })  
+         res.render("frontPage", { polls })  
         } catch (error) {
-            res.status(500).send('Une erreur est survenue ');
+            res.status(500).send('Une erreur est survenue');
         }                
     }
 }
