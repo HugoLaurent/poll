@@ -4,14 +4,14 @@ require('dotenv').config();
 const express = require('express');
 
 // on importe le router
-const router = require('./app/routers/router');
+const router = require('./src/routers/router');
 
 
 // un peu de config
 const PORT = process.env.PORT || 3000;
 const app = express();
 app.set('view engine', 'ejs');
-app.set('views', 'app/views');
+app.set('views', 'src/views');
 
 
 
