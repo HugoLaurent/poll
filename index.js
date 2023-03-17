@@ -28,7 +28,7 @@ app.use(express.static('public'));
 
 // Notre body parser pour les requêtes POST
 app.use(express.urlencoded({ extended: true }));
-
+console.log(process.env.PG_URL)
 
 // routage !
 app.use(router);
