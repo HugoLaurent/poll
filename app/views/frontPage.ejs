@@ -1,5 +1,6 @@
 <%- include('./partials/header') %>
    
+        
         <h1 class="category-title">Most Popular</h1>
         <main>
           <% for(const poll of polls) { %>
@@ -61,19 +62,35 @@
             </ul>
             <button type="submit">Validate</button>
         </form>
-    </section>
-    <section class="connect form">
-        <span class="to-close-connect">x</span>
-        
-            <h1>Connect Form</h1>
-            <form action="" method="POST">
-            <ul>
-                <li><input placeholder="Pseudo" type="text"></li>
-                <li><input placeholder="Password" type="text"></input></li>
-            </ul>
-            <button type="submit">Connect</button>
-        </form>
-    </section>
+        </section>
+        <section class="connect form">
+            <span class="to-close-connect">x</span>
+            
+                <h1>Connect Form</h1>
+                <form action="" method="POST">
+                <ul>
+                    <li><input placeholder="Pseudo" type="text"></li>
+                    <li><input placeholder="Password" type="text"></input></li>
+                </ul>
+                <button type="submit">Connect</button>
+            </form>
+        </section>
+
+        </section>
+        <section class="create form">
+            <span class="to-close-create">x</span>
+            
+                <h1>Create a poll</h1>
+                <form action="" method="POST">
+                    <ul>
+                        <li><input placeholder="title" type="text"></li>
+                        <li><input placeholder="description" type="text"></li>
+                        <li><input placeholder="choix-a" type="text"></li>
+                        <li><input placeholder="choix-b" type="text"></li>
+                    </ul>
+                    <button type="submit">Validate</button>
+                </form>
+        </section>
     </main>
 
    
