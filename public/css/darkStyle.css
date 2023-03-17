@@ -1,0 +1,36 @@
+/* DAY OR NIGHT */
+
+
+.dark-body{
+    background-color: var(--body-bg-night);
+    color: var(--text-color-night);
+    border: 3px solid var(--border-color-night);
+}
+
+.dark-button {
+    color: white;
+}
+
+.dark-article {
+    background-color: var(--article-bg-night);
+}
+
+.dark-a {
+    color: var(--nav-a-night)
+}
+
+.dark-hover {
+    box-shadow: 0 0 0 0 var(--border-color-night);
+}
+
+.dark-section {
+    background-color: var(--article-bg-night) !important;
+}
+
+.dark-hover:hover:not(:last-child) {
+    box-shadow: 0 0 0 4px var(--border-color-night);
+}
+
+.dark-img {
+    filter: invert(1);
+}

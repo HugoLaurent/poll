@@ -18,6 +18,14 @@ const forms             = document.querySelectorAll('.form')
 const allShareButton    = document.querySelectorAll('.share-button')
 const shareButton       = document.querySelector('.coming-soon')
 
+const menuClose         = document.querySelector('.menu-close')
+const menuBurger        = document.querySelector('.menu-image')
+const insideMenu        = document.querySelector('.small-screen')
+
+
+
+
+
 
 // FOR RANDOM BORDER ON EACH POLLS
 
@@ -57,6 +65,7 @@ checkboxes.forEach((checkbox) => {
 
 toggle.addEventListener('click', () => {
     body.classList.toggle('dark-body')
+    insideMenu.classList.toggle('dark-article')
     articles.forEach((article) => {
         article.classList.toggle('dark-article')
     })
@@ -96,5 +105,11 @@ connectFormClose.addEventListener('click', () => {
     formConnect.classList.toggle('form__pop-up')
 })
 
+menuBurger.addEventListener('click', () => {
+    insideMenu.style.display = 'block'
+})
 
+menuClose.addEventListener('click', () => {
+    insideMenu.style.display = 'none'
+})
 
