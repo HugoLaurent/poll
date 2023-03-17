@@ -1,22 +1,35 @@
 <%- include('./partials/header') %>
    
-        
-<h1 class="category-title">Most Popular</h1>
-<main>
-    <% for(const poll of polls) { %>
-    <article>
-        <div class="poll">
-            <h2><%= poll.title %></h2>
-            <p classname="author"><%= poll.author %></p>
-        </div>
-        <p><%= poll.question %></p>
-        <section class="polls">
-            <div class="wrapper-all-progress">
-                
-                <input class="validatePoll" type="checkbox" name="choice" id="first">
-                <div class="progressbar-wrapper">
-                    <div style="width: <%=poll.first_result%>%" title="first_choice" class="progressbar">
-                        <p><%= poll.choice_a %></p>
+        <h1 class="category-title">Most Popular</h1>
+        <main>
+          <% for(const poll of polls) { %>
+            <article>
+                <div class="poll">
+                    <h2><%= poll.title %></h2>
+                    
+                    <p classname="author"><%= poll.author.pseudo %></p>
+                </div>
+                <p><%= poll.question %></p>
+                <section class="polls">
+                    <div class="wrapper-all-progress">
+                        
+                        <input class="validatePoll" type="checkbox" name="choice" id="first">
+                        <div class="progressbar-wrapper">
+                            <div style="width: <%=poll.result_a%>%" title="first_choice" class="progressbar">
+                                <p><%= poll.choice_a %></p>
+                            </div>
+                        </div>
+                        <span class="choice"><%= poll.result_a%>%</span>
+                    </div>
+                    <div class="wrapper-all-progress">
+                        <input class="validatePoll" type="checkbox" name="choice" id="second">
+                        <div class="progressbar-wrapper">
+                            
+                            <div style="width: <%=poll.result_b%>%" title="second_choice" class="progressbar">
+                                <p><%= poll.choice_b %></p>
+                            </div>
+                        </div>
+                        <span><%= poll.result_b%>%</span>
                     </div>
                 </div>
                 <span class="choice"><%= poll.first_result%>%</span>
