@@ -2,25 +2,29 @@ const mainDiv           = document.querySelector('main');
 const body              = document.querySelector('body');
 
 const toggle            = document.querySelector('.dayNight');
-const buttonNav         = document.querySelectorAll('a')
-const hoverNav          = document.querySelectorAll('li')
-const images            = document.querySelectorAll('img')
-const articlesButtons     = document.querySelectorAll('.article-button')
+const buttonNav         = document.querySelectorAll('a');
+const hoverNav          = document.querySelectorAll('li');
+const images            = document.querySelectorAll('img');
+const articlesButtons     = document.querySelectorAll('.article-button');
 
-const signUp            = document.querySelector('.sign')
-const connectUp         = document.querySelector('.connect-button')
-const formSignUp        = document.querySelector('.sign-up')
-const formConnect       = document.querySelector('.connect')
-const signUpFormClose   = document.querySelector('.to-close')
-const connectFormClose  = document.querySelector('.to-close-connect')
-const forms             = document.querySelectorAll('.form')
+const signUp            = document.querySelector('.sign');
+const connectUp         = document.querySelector('.connect-button');
+const formSignUp        = document.querySelector('.sign-up');
+const formConnect       = document.querySelector('.connect');
+const signUpFormClose   = document.querySelector('.to-close');
+const connectFormClose  = document.querySelector('.to-close-connect');
+const forms             = document.querySelectorAll('.form');
 
-const allShareButton    = document.querySelectorAll('.share-button')
-const shareButton       = document.querySelector('.coming-soon')
+const createButton      = document.querySelector('.create-button');
+const createForm        = document.querySelector('.create');
+const createClose       = document.querySelector('.to-close-create');
 
-const menuClose         = document.querySelector('.menu-close')
-const menuBurger        = document.querySelector('.menu-image')
-const insideMenu        = document.querySelector('.small-screen')
+const allShareButton    = document.querySelectorAll('.share-button');
+const shareButton       = document.querySelector('.coming-soon');
+
+const menuClose         = document.querySelector('.menu-close');
+const menuBurger        = document.querySelector('.menu-image');
+const insideMenu        = document.querySelector('.small-screen');
 
 
 
@@ -88,22 +92,47 @@ toggle.addEventListener('click', () => {
     
 });
 
+function popUp(a, b) {
+    a.addEventListener('click', () => {
+        b.classList.toggle('form__pop-up')
+    })
+};
 
-signUp.addEventListener('click', () => {
-    formSignUp.classList.toggle('form__pop-up')
-})
+// OPEN AND CLOSE SIGN UP PAGE
+popUp(signUp, formSignUp)
+popUp(signUpFormClose, formSignUp)
 
-signUpFormClose.addEventListener('click', () => {
-    formSignUp.classList.toggle('form__pop-up')
-})
+// OPEN AND CLOSE CONNECT PAGE
+popUp(connectUp, formConnect)
+popUp(connectFormClose, formConnect)
 
-connectUp.addEventListener('click', () => {
-    formConnect.classList.toggle('form__pop-up')
-})
+// OPEN AND CLOSE CREATE PAGE
+popUp(createButton, createForm)
+popUp(createClose, createForm)
 
-connectFormClose.addEventListener('click', () => {
-    formConnect.classList.toggle('form__pop-up')
-})
+// signUp.addEventListener('click', () => {
+//     formSignUp.classList.toggle('form__pop-up')
+// })
+
+// signUpFormClose.addEventListener('click', () => {
+//     formSignUp.classList.toggle('form__pop-up')
+// })
+
+// connectUp.addEventListener('click', () => {
+//     formConnect.classList.toggle('form__pop-up')
+// })
+
+// connectFormClose.addEventListener('click', () => {
+//     formConnect.classList.toggle('form__pop-up')
+// })
+
+// createButton.addEventListener('click', () => {
+//     createForm.classList.toggle('form__pop-up')
+// })
+
+// createClose.addEventListener('click', () => {
+//     createForm.classList.toggle('form__pop-up')
+// })
 
 menuBurger.addEventListener('click', () => {
     insideMenu.style.display = 'block'
