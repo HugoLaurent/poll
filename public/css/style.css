@@ -520,39 +520,21 @@ form {
         margin: 0;
     }
 
-    .dayNight[type=checkbox]{
+    .media-dayNight[type=checkbox]{
         height: 0;
         width: 0;
-        visibility: hidden;
+        display: none;
     }
     
-    label {
+    .small-screen label {
         cursor: pointer;
-        width: 25px;
-        height: 20px;
+        width: 23px;
+        height: 17px;
         background: var(--switch-theme-bg-color);
         display: block;
         border-radius: 100px;
         position: relative;
     }
-    
-    label:after {
-        content: '\002600';
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        border-radius: 90px;
-        transition: 0.3s;
-    }
-    
-    
-    .dayNight:checked + label:after {
-        content: '\1F319';
-        filter: grayscale(1);
-        left: calc(20% - 5px);
-        transform: translateX(-40%);
-    }
-    
     
     article p {
         font-size: 2rem;
