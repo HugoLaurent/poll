@@ -1,5 +1,9 @@
-INSERT INTO "poll"("id", "title", "author", "question", "choice_a", "choice_b", "first_result", "second_result") VALUES (1, 'La guerre', 'Mohamed Ali', 'Pour ou contre la guerre ?', 'Moyennement', 'Pour', 66, 44),
-(2, 'L''amitie', 'Donald J Trump', 'Aimes tu l''amitie?', 'Fake NEWS', 'FAKE NEWS', 99, 1),
-(3, 'O''clock', 'Anais', 'Vous voulez vos tasses?', 'Non', 'Non', 50, 50),
-(4, 'Systeme', 'Bills Gate', 'Pc ou Mac?', 'PC', 'PC', 100, 0),
-(5, 'Je ne trouve pas', 'd''idee', 'Pour cette', 'ligne', 'voila', 24, 76)
+INSERT INTO "user"("id", "pseudo", "firstname", "lastname", "email", "password") VALUES
+(1, 'MikeRs', 'Michael', 'Dutheil', 'mike@oclock.io', '123456'),
+(2, 'DevConte', 'romain', 'leconte', 'dev@oclock.io', '123456');
+
+INSERT INTO "poll"("id", "title", "question", "choice_a", "choice_b", "result_a", "result_b", "user_id") VALUES 
+(1, 'Oclock', 'Vous voulez vos tasses?', 'Non', 'Non', 50, 50, 1),
+(2, 'Systeme', 'Pc ou Mac?', 'PC', 'Mac', 100, 0, 1),
+(3, 'Politique', 'Pour ou contre le 49.3 ?', 'Oui', 'Non', 50, 50, 2),
+(5, 'Je ne trouve pas', 'Une idée ?', 'Oui', 'Non', 24, 76, 2);

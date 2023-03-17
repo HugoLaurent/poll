@@ -22,8 +22,8 @@ CREATE TABLE IF NOT EXISTS "poll" (
   "question" text NOT NULL,
   "choice_a" text NOT NULL,
   "choice_b" text NOT NULL,
-  "first_result" INT,
-  "second_result" INT,
+  "result_a" INT,
+  "result_b" INT,
   "user_id" integer NOT NULL REFERENCES "user"("id"),
   "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
   "updated_at" timestamptz
