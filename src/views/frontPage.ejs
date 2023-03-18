@@ -2,7 +2,11 @@
    
         <h1 class="category-title">Most Popular</h1>
         <main>
+            <% if(locals.errorMessage) { %>
+            <p><%= errorMessage %></p>
+            <% } %>
           <% for(const poll of polls) { %>
+            
             <article>
                 <form class="poll" action="" method="POST">
                         <h2><%= poll.title %></h2>

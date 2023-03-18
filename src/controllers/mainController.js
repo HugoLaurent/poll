@@ -19,18 +19,30 @@ const mainController = {
     }
   },
 
-   async addVote(req, res){
+  async addVote(req, res){
 
     const choice = req.body.choice;
-    const pollId = Number(req.body.id);   
+    const pollId = Number(req.body.id);
 
-    const vote = await Poll.increment(choice, {where: {id: pollId }} ); 
-    
+    const polls = await Poll.findAll({
+      include: [
+        {
+          association: "author",
+          attributes: ["pseudo"]
+        }
+      ]});
+
+    if(!choice) {
+      res.render('frontPage', {polls, errorMessage: "Please make a choice on the poll before submitting it"});
+      return;
+    } else {
+      const vote = await Poll.increment(choice, {where: {id: pollId }} );
+    }
     res.redirect("/");
 
   }
 
-}; 
+};
 
 module.exports = mainController;
 
