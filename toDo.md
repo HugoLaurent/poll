@@ -4,7 +4,10 @@ Setup Sequelize :
 - Crée les models ✅
 - Crée les associations ✅
 - Crée le index.js pour rendre dispo nos models a l'extérieur ✅
-- Ajouter logique dans controller
+- Ajouter logique dans controller ✅
+- Refacto Sequelize creation et pop table ✅
+- Voir comment on va gérer la création en BDD maintenant 
+- 
 
 
 Setup Global :

@@ -6,4 +6,6 @@ const router = express.Router();
 
 router.get('/', mainController.homePage);
 
+router.post('/', mainController.addVote);
+
 module.exports = router;
