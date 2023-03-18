@@ -164,22 +164,19 @@ article p {
     margin-right: 1rem;
 }
 
-main article {
+.poll-container {
     padding: 1rem 1.5rem;
     margin: 1rem;
     min-width: 40%;
-    max-width: fit-content;
+    max-width: max-content;
     flex: 1;
+    background-color: var(--article-bg);
+    border: 6px solid var(--border-color-article);
 }
 
 main h2 {
     font-size: 2rem;
     margin: 0;
-}
-
-article {
-    background-color: var(--article-bg);
-    border: 6px solid var(--border-color-article);
 }
   
 .progressbar-wrapper {
