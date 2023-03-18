@@ -5,9 +5,13 @@ dotenv.config();
 
 const express = require('express');
 
+
 // on importe le router
 
 const router = require('./src/routers/router');
+const authRouter = require("./src/routers/authRouter");
+const sessionMiddleware = require("./src/middlewares/sessionMiddleware");
+
 
 
 // un peu de config
@@ -21,17 +25,18 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'src/views');
 
-
+app.use(sessionMiddleware);
 
 // servir les fichiers statiques qui sont dans "public"
 app.use(express.static('public'));
 
 // Notre body parser pour les requêtes POST
 app.use(express.urlencoded({ extended: true }));
-console.log(process.env.PG_URL)
+
 
 // routage !
 app.use(router);
+app.use(authRouter);
 
 
 

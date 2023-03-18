@@ -21,11 +21,11 @@ Poll.init({
     allowNull: false
   },
   result_a:{
-    type: DataTypes.TEXT,
+    type: DataTypes.INTEGER,
     allowNull: false
   },
   result_b:{
-    type: DataTypes.TEXT,
+    type: DataTypes.INTEGER,
     allowNull: false
   }
 
