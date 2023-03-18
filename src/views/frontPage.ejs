@@ -42,15 +42,17 @@
                     <img class="share-button" src="/images/share.svg" alt="">
                     <span class="coming-soon"></span>
                     <input type="hidden" id="id" name="id" value="<%=poll.id%>">
-                </div>
-                <p class="poll-footer-vote"><%=poll.result_a + poll.result_b %> votes</p>
+                </div>                              
+                <p class="poll-footer-vote"><%=poll.result_a + poll.result_b %> votes</p>                                
+                <% if(!votes.includes(poll.id)) {%>
                 <button class="article-button" type="submit">Validate</button>
+                <% } %>  
             </div>
         </form>
         </article>
 
 <% } %> 
-
+    
     <!-- POP UP FOR THE SIGN UP FORM -->
     <section class="sign-up form">
         <span class="to-close">x</span>
