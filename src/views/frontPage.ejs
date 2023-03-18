@@ -47,13 +47,18 @@
                     <img src="/images/twitch.png" alt="">
                     <img src="/images/discord.png" alt=""> -->
                                 </div>
-                                <p>2456 votes</p>
+                                <p><%= poll.result_a + poll.result_b %> votes</p>
+
+                            
+                                <!--Si poll.id est dans le tableau ALORS TU DISPARAIS -->
+                                <% if(!votes.includes(poll.id)) {%>
                                 <button class="article-button" type="submit">Validate</button>
+                                <% } %>
                 </form>
     </article>
     
 <% } %> 
-
+    
     <!-- POP UP FOR THE SIGN UP FORM -->
     <section class="sign-up form">
     <span class="to-close">x</span>
