@@ -5,7 +5,7 @@ const toggle            = document.querySelector('.dayNight');
 const buttonNav         = document.querySelectorAll('a');
 const hoverNav          = document.querySelectorAll('li');
 const images            = document.querySelectorAll('img');
-const articlesButtons     = document.querySelectorAll('.article-button');
+const articlesButtons   = document.querySelectorAll('.article-button');
 
 const signUp            = document.querySelector('.sign');
 const connectUp         = document.querySelector('.connect-button');
@@ -22,7 +22,7 @@ const createClose       = document.querySelector('.to-close-create');
 const allShareButton    = document.querySelectorAll('.share-button');
 const shareButton       = document.querySelector('.coming-soon');
 
-const menuClose         = document.querySelector('.menu-close');
+const menuClose         = document.querySelector('.menu-close-button');
 const menuBurger        = document.querySelector('.menu-image');
 const insideMenu        = document.querySelector('.small-screen');
 
@@ -40,6 +40,8 @@ function randomBorder (a, b, c) {
 
 
 const articles = document.querySelectorAll("article");
+
+
 articles.forEach(article => {
     article.style.borderTopLeftRadius       = `${randomBorder(255, 155, 1)}px ${randomBorder(50, 10, 1)}px`
     article.style.borderTopRightRadius      = `${randomBorder(50, 10, 1)}px ${randomBorder(255, 155, 1)}px`
@@ -51,19 +53,19 @@ articles.forEach(article => {
 
 const checkboxes = document.querySelectorAll('input');
 
-// Ajoutez un écouteur d'événement à chaque case à cocher
-checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener('click', () => {
-    // Si la case est cochée, décochez toutes les autres cases
-    if (checkbox.checked) {
-        checkboxes.forEach((otherCheckbox) => {
-        if (otherCheckbox !== checkbox) {
-            otherCheckbox.checked = false;
+    // Ajoutez un écouteur d'événement à chaque case à cocher
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('click', () => {
+        // Si la case est cochée, décochez toutes les autres cases
+        if (checkbox.checked) {
+            checkboxes.forEach((otherCheckbox) => {
+            if (otherCheckbox !== checkbox) {
+                otherCheckbox.checked = false;
+            }
+            });
         }
         });
-    }
     });
-});
 
 // DAY OR NIGHT 
 
@@ -110,29 +112,6 @@ popUp(connectFormClose, formConnect)
 popUp(createButton, createForm)
 popUp(createClose, createForm)
 
-// signUp.addEventListener('click', () => {
-//     formSignUp.classList.toggle('form__pop-up')
-// })
-
-// signUpFormClose.addEventListener('click', () => {
-//     formSignUp.classList.toggle('form__pop-up')
-// })
-
-// connectUp.addEventListener('click', () => {
-//     formConnect.classList.toggle('form__pop-up')
-// })
-
-// connectFormClose.addEventListener('click', () => {
-//     formConnect.classList.toggle('form__pop-up')
-// })
-
-// createButton.addEventListener('click', () => {
-//     createForm.classList.toggle('form__pop-up')
-// })
-
-// createClose.addEventListener('click', () => {
-//     createForm.classList.toggle('form__pop-up')
-// })
 
 menuBurger.addEventListener('click', () => {
     insideMenu.style.display = 'block'
