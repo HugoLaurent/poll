@@ -1,10 +1,10 @@
 <%- include('./partials/header') %>
-   
+<main>
 <% if(locals.errorMessage) { %>
     <p><%= errorMessage %></p>
     <% } %>
 <% for(const poll of polls) { %>
-    <article>
+    <article class="poll-container">
         <div class="poll">
             <h2><%= poll.title %></h2>
             <p classname="author"><%= poll.author.pseudo %></p>
