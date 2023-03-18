@@ -14,6 +14,7 @@ const mainController = {
       const polls = await Poll.findAll({
         include: [
           {
+            order: ["title"],
             association: "author",
             attributes: ["pseudo"]
           }
@@ -34,6 +35,7 @@ const mainController = {
     const polls = await Poll.findAll({
       include: [
         {
+          order: ["title"],
           association: "author",
           attributes: ["pseudo"]
         }
@@ -41,16 +43,19 @@ const mainController = {
 
     req.session.vote = req.session.vote || [];
     const votes = req.session.vote;
-
+    
+    
     if(!choice) {
       const guest = req.session.guest;
       res.render('frontPage', {polls, guest, votes, errorMessage: "Please make a choice on the poll before submitting it"});
       return;
 
     } else {
+      
       const guest = req.session.guest;
-      await Poll.increment(choice, {where: {id: pollId }} );    
-      res.render('frontPage', {polls, guest, votes});
+      await Poll.increment(choice, {where: {id: pollId }} );  
+      votes.push(pollId);          
+      res.redirect('/');
     }
   }
 
