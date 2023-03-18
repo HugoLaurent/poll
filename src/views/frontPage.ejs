@@ -1,42 +1,45 @@
 <%- include('./partials/header') %>
+<h2 class="category-title">Popular</h2>
 <main>
 <% if(locals.errorMessage) { %>
     <p><%= errorMessage %></p>
     <% } %>
+
+    
 <% for(const poll of polls) { %>
     <article class="poll-container">
-        <div class="poll">
-            <h2><%= poll.title %></h2>
-            <p classname="author"><%= poll.author.pseudo %></p>
+        <div class="poll-header">
+            <h2 class="poll-header-title"><%= poll.title %></h2>
+            <p class="poll-header-author"><%= poll.author.pseudo %></p>
         </div>
-        <p><%= poll.question %></p>
-        <section class="polls">
-            <div class="wrapper-all-progress">
-                <input class="validatePoll" type="checkbox" id="first" name="choice" value="result_a">
-                <div class="progressbar-wrapper">
-                    <div style="width: <%=poll.result_a%>%" title="first_choice" class="progressbar">
-                        <p><%= poll.choice_a %></p>
+        <p class="poll-question"><%= poll.question %></p>
+        <section class="poll-wrappers">
+            <div class="poll-wrapper">
+                <input class="poll-wrapper-checkbox" type="checkbox" id="first" name="choice" value="result_a">
+                <div class="poll-progressbar-wrapper">
+                    <div class="poll-progressbar" style="width: <%=poll.result_a%>%" title="first_choice">
+                        <p class="poll-progressbar"><%= poll.choice_a %></p>
                     </div>
                 </div>
-                <span class="choice"><%= poll.result_a%>%</span>
+                <span class="poll-progressbar-pourcent"><%= poll.result_a%>%</span>
             </div>
-            <div class="wrapper-all-progress">
-                <input class="validatePoll" type="checkbox" id="second" name="choice" value="result_b">          
-                <div class="progressbar-wrapper">
-                    <div style="width: <%=poll.result_b%>%" title="second_choice" class="progressbar">
+            <div class="poll-wrapper">
+                <input class="poll-wrapper-checkbox" type="checkbox" id="second" name="choice" value="result_b">          
+                <div class="poll-progressbar-wrapper">
+                    <div class="poll-progressbar" style="width: <%=poll.result_b%>%" title="second_choice" >
                         <p><%= poll.choice_b %></p>
                     </div>
                 </div>
-                <span><%= poll.result_b%>%</span>
+                <span class="poll-progressbar-pourcent"><%= poll.result_b%>%</span>
             </div>               
         </section>
-        <div class="footer-article">
-            <div class="share">
+        <div class="poll-footer">
+            <div class="poll-footer-share">
                 <img class="share-button" src="/images/share.svg" alt="">
                 <span class="coming-soon"></span>
                 <input type="hidden" id="id" name="id" value="<%=poll.id%>">
             </div>
-            <p>2456 votes</p>
+            <p class="poll-footer-vote">2456 votes</p>
             <button class="article-button" type="submit">Validate</button>
         </div>
     </article>
