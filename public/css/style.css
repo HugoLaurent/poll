@@ -18,7 +18,6 @@
 
 body {
     font-family: 'Patrick Hand SC', cursive;
-
     box-sizing: content-box;
     background-color: var(--body-bg);
     border: 6px solid var(--border-main-color);
@@ -26,6 +25,14 @@ body {
     border-top-right-radius: 15px 225px;
     border-bottom-left-radius: 225px 15px;
     border-bottom-right-radius: 15px 255px;
+}
+
+.menu-image {
+    display: none;
+}
+
+.menu {
+    display: none;
 }
 
 header {
@@ -36,24 +43,16 @@ header {
     flex-wrap: wrap;
 }
 
-.menu-image {
-     display: none;
-}
-
-.menu {
-    display: none;
+header h1 {
+    font-size: 5rem;
+    cursor: pointer;
+    letter-spacing: .1rem;
+    margin: 0;
 }
 
 header a {
     text-decoration: none;
     color: #0f0f0f;
-}
-
-header h1 {
-    font-size: 4rem;
-    cursor: pointer;
-    letter-spacing: .1rem;
-    margin: 0;
 }
 
 header nav {
@@ -140,49 +139,52 @@ main {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
-}
-
-.poll {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
 }
 
 .category-title {
     margin: 0;
-    margin-left: 2rem;
+    font-size: 2rem;
+    margin-left: 5rem;
 }
 
-.poll p {
+.poll-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.poll-header-author {
     font-size: 1.5rem;
+    margin: 0;
 }
 
-article p {
+.poll-question {
     font-size: 3rem;
     margin: 0;
     margin-right: 1rem;
 }
 
-main article {
+.poll-container {
     padding: 1rem 1.5rem;
     margin: 1rem;
     min-width: 40%;
     max-width: fit-content;
     flex: 1;
+    background-color: var(--article-bg);
+    border: 6px solid var(--border-color-article);
 }
 
-main h2 {
+.poll-header-title {
     font-size: 2rem;
     margin: 0;
 }
 
-article {
-    background-color: var(--article-bg);
-    border: 6px solid var(--border-color-article);
+.poll-wrapper {
+    display: flex;
+    align-items: center;
 }
-  
-.progressbar-wrapper {
+
+.poll-progressbar-wrapper {
     display: flex;
     flex: 1;
     background-color: #dfe6e9;
@@ -197,7 +199,7 @@ article {
     margin: .5rem .5rem;
 }
 
-.validatePoll[type="checkbox"] {
+.poll-wrapper-checkbox[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -207,9 +209,9 @@ article {
     border: 1px solid #111010;
     background-color: #fff;
     cursor: pointer;
-  }
+}
 
-.validatePoll[type="checkbox"]:checked::before {
+.poll-wrapper-checkbox[type="checkbox"]:checked::before {
     content: "\2713";
     display: block;
     text-align: center;
@@ -218,17 +220,9 @@ article {
     font-weight: bold;
 }
 
-.wrapper-all-progress {
-    display: flex;
-    align-items: center;
-}
 
-.wrapper-all-progress span {
-    font-size: 2rem;
-    min-width: 60px;
-}
 
-.progressbar {
+.poll-progressbar {
     background-color: #D3E9E3;
     color: white;
     padding-left: 1rem;
@@ -241,17 +235,21 @@ article {
     position: relative;
 }
 
-.progressbar[title="first_choice"] {
+.poll-progressbar[title="first_choice"] {
     background-color: #D3E9E3;
     border: 3px solid #00b894;
 }
 
-.progressbar[title="second_choice"] {
+.poll-progressbar[title="second_choice"] {
     background-color: #F4DADB;
     border: 3px solid #e17055;
 }
 
-.progressbar p {
+.poll-progressbar-pourcent {
+    font-size: 2rem;
+    min-width: 60px;
+}
+.poll-progressbar p {
     font-size: 1.5rem;
     color: black;
     padding: 0;
@@ -259,7 +257,7 @@ article {
     width: max-content;
 }
 
-.footer-article {
+.poll-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -267,25 +265,26 @@ article {
     font-family: 'Patrick Hand SC', cursive;
 }
 
-.footer-article img {
-    width: 2rem;
-    cursor: pointer;
+.poll-footer-vote {
+    margin: 0;
 }
-
 /* SHARED BUTTON  */
 
-.share {
+.poll-footer-share {
     display: flex;
     align-items: center;
 }
 
-.share:hover::after {
+.poll-footer-share:hover::after {
     content: 'Coming soon';
 }
 
+.poll-footer img {
+    width: 2rem;
+    cursor: pointer;
+}
 
-
-.footer-article button {
+.poll-footer button {
     border: none;
     cursor: pointer;
     background: none;
@@ -301,7 +300,7 @@ article {
     font-family: 'Patrick Hand SC', cursive;
 }
   
-.footer-article button:hover {
+.poll-footer button:hover {
     box-shadow: 0 0 0 4px var(--border-color-article);
     outline-offset: -2px;
 }
@@ -373,7 +372,7 @@ footer div button:hover {
     border-bottom-right-radius: 15px 190px;
 }
 
-form {
+.popup {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -476,7 +475,7 @@ form {
         margin: 1rem;
     }
     
-    main article {
+    .poll-container {
         max-width: 100%;
     }
 
@@ -536,7 +535,7 @@ form {
         position: relative;
     }
     
-    article p {
+    .poll-header-author {
         font-size: 2rem;
         margin: .5rem 0;
     }
