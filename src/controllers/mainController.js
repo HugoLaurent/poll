@@ -51,9 +51,7 @@ const mainController = {
 
       const guest = req.session.guest;
       await Poll.increment(choice, {where: {id: pollId }} );
-      votes.push(pollId);
-      console.log(votes);
-      res.render('frontPage', {polls, guest, votes});
+      res.redirect('/');
     }
   }
 
