@@ -48,10 +48,9 @@ const mainController = {
       return;
 
     } else {
-
       const guest = req.session.guest;
-      await Poll.increment(choice, {where: {id: pollId }} );
-      res.redirect('/');
+      await Poll.increment(choice, {where: {id: pollId }} );    
+      res.render('frontPage', {polls, guest, votes});
     }
   }
 

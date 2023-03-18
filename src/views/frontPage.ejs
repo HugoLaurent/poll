@@ -2,18 +2,20 @@
 <h2 class="category-title">Popular</h2>
 <main>
     
-<% if(locals.errorMessage) { %>
-    <p><%= errorMessage %></p>
-    <% } %>
+
 
     
 <% for(const poll of polls) { %>
 
-    <% const pourcentA = Math.round((poll.result_a /(poll.result_a + poll.result_b)) * 100) %>
-    <% const pourcentB = Math.round((poll.result_b /(poll.result_a + poll.result_b)) * 100) %>
+    
     <article class="poll-container">
             <form method="POST" action="">
+                <% const pourcentA = Math.round((poll.result_a /(poll.result_a + poll.result_b)) * 100) %>
+                <% const pourcentB = Math.round((poll.result_b /(poll.result_a + poll.result_b)) * 100) %>
             <div class="poll-header">
+                <% if(locals.errorMessage) { %>
+                    <p><%= errorMessage %></p>
+                    <% } %>
                 <h2 class="poll-header-title"><%= poll.title %></h2>
                 <p class="poll-header-author"><%= poll.author.pseudo %></p>
             </div>
