@@ -19,8 +19,6 @@ const userAuthController = {
         ]
       });
 
-
-
     //on réupere les donnés du signup du form
     const { pseudo, firstname, lastname, email, password, confirmation } = req.body;
   
@@ -61,8 +59,7 @@ const userAuthController = {
     if (alreadyExistingPseudo) {
       res.render("frontPage", { polls, votes, errorMessage: "This pseudo is already taken" });
       return;
-    }
-    
+    }    
 
      // ===== INSERTION DU USER ====
     // ON hash le password
@@ -81,6 +78,52 @@ const userAuthController = {
     }), 
     console.log(req.body)
     res.render("frontPage", { polls, votes,errorMessage: "You are successfully registered. Please authenticate now."});
+  },
+
+  async handleLoginForm(req,res){
+    
+    req.session.vote = req.session.vote || [];
+    const votes = req.session.vote;   
+     
+      const polls = await Poll.findAll({
+        include: [
+          {
+            order: ["title"],
+            association: "author",
+            attributes: ["pseudo"]
+          }
+        ]
+      });
+      
+    const { pseudo, password } = req.body;
+      
+    if (!pseudo || !password){
+      res.render("frontPage", { polls, votes,errorMessage: "Incorrect username or password"});
+      return;
+    }
+
+    const user = await User.findOne({
+      where: { pseudo },      
+
+    });
+
+    const isMatching = await bcrypt.compare(password, user.password);
+
+    if(!isMatching){
+      res.render("frontPage", {polls, votes,errorMessage: "Incorrect username or password"});
+      return;
+    }
+
+    req.session.userId = user.id;
+
+    res.redirect("/")
+
+  },
+
+  async logoutAndRedirect(req, res) {
+    // On veut retirer le userId de la session
+    req.session.userId = null;
+    res.redirect("/");
   }
 
 }

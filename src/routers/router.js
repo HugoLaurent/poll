@@ -12,6 +12,11 @@ router.post('/', mainController.addVote);
 router.get('/signup', mainController.homePage);
 router.post('/signup', userAuthController.handleSignUpForm);
 
+//Pour gerer la route dde la connexion d'un utilisateur
+router.get('/login', mainController.homePage);
+router.post('/login', userAuthController.handleLoginForm);
+
+router.get('/logout', userAuthController.logoutAndRedirect);
 
 
 

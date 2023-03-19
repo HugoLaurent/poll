@@ -12,15 +12,21 @@
 
   </body>
   
-
     <header>
         <h1><a href="/">Poll's</a></h1>
+        <h2 style="color:red;"><% if(locals.errorMessage) { %>
+            <p><%= errorMessage %></p>
+            <% } %></h2>
         <nav>
             <ul class="big-screen">
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/polls.html">Polls</a></li>
+                <% if (locals.user) { %>
+                    <a class="p-2 text-white" href="/logout">Disconnect</a>
+                <% } else { %>
                 <li><a class="sign">Sign up</a></li>
                 <li><a class="connect-button">Connect</a></li>
+                <% } %>
                 <form action="" method="PO">
                 <li class="input"><input class="dayNight" type="checkbox" id="switch"/><label for="switch"></label></li>
                 </form> 

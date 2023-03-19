@@ -19,7 +19,7 @@ const mainController = {
             attributes: ["pseudo"]
           }
         ]
-      });     
+      });       
       res.render("frontPage", { polls, guest, votes });
       console.log(req.session);
     } catch (error) {
