@@ -11,7 +11,7 @@
 
     
     <article class="poll-container">
-            <form method="POST" action="">
+            <form method="POST" action="/">
                 <% const pourcentA = Math.round((poll.result_a /(poll.result_a + poll.result_b)) * 100) %>
                 <% const pourcentB = Math.round((poll.result_b /(poll.result_a + poll.result_b)) * 100) %>
             <div class="poll-header">                
@@ -58,17 +58,18 @@
     <section class="sign-up form">
         <span class="to-close">x</span>
         <h1>Inscription Form</h1>
-            <form class="popup" action="" method="POST">
+            <form class="popup" action="/signup" method="POST">              
                 <ul>
-                    <li><input placeholder="Prénom" type="text"></li>
-                    <li><input placeholder="Nom" type="text"></li>
-                    <li><input placeholder="Pseudo" type="text"></li>
-                    <li><input placeholder="E-mail" type="text"></li>
-                    <li><input placeholder="Password" type="text"></li>
+                    <li><input type="pseudo" id="pseudo" name="pseudo" placeholder=" Pseudo"  ></li>
+                    <li><input type="firstname" id="firstname" name="firstname" placeholder=" Firstname" ></li>
+                    <li><input type="lastname" id="lastname" name="lastname" placeholder=" Lastname"  ></li>                    
+                    <li><input type="email" id="email" name="email" placeholder=" E-mail" ></li>
+                    <li><input type="password" id="password" name="password" placeholder=" Password" ></li>
+                    <li><input type="password" id="confirmation" name="confirmation" placeholder=" Confirmation" ></li>
                 </ul>
                 <ul class="conditions">
-                    <li><input class="private" type="checkbox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </li>
-                    <li><input class="private" type="checkbox">Lorem ipsum dolor sit amet consectetur.</li>
+                    <li><input class="private" type="checkbox">I accept the conditions of the following articles: <a style="text-decoration: none; "href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN">   Official Journal </a>--<a style="text-decoration: none; "href="https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:C:2010:083:0389:0403:EN:PDF"> EU Charter </a></li>
+                    <li> and i agree to poll's storage terms</li>
                 </ul>
                 <button type="submit">Validate</button>
             </form>
