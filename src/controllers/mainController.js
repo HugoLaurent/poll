@@ -7,7 +7,7 @@ const mainController = {
 
     req.session.vote = req.session.vote || [];
     const votes = req.session.vote;
-
+   
     req.session.guest = true;
     const guest = req.session.guest;
     try{
@@ -42,7 +42,7 @@ const mainController = {
       ]});
 
     req.session.vote = req.session.vote || [];
-    const votes = req.session.vote;
+    const votes = req.session.vote;    
     
     
     if(!choice) {
