@@ -19,6 +19,11 @@ User.init({
     password: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    role:{
+        type: DataTypes.ENUM(["member", "admin"]),
+        allowNull:false,
+        defaultValue:"member"
     }
 }, {
     sequelize,
