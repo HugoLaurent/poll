@@ -21,8 +21,11 @@
             <ul class="big-screen">
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/polls.html">Polls</a></li>
+                <% if (locals.user && locals.user.role === "admin") { %>
+                    <a class="admin" href="">Manage</a>
+                  <% } %>
                 <% if (locals.user) { %>
-                    <a class="p-2 text-white" href="/logout">Disconnect</a>
+                    <a class="logout" href="/logout">Disconnect</a>
                 <% } else { %>
                 <li><a class="sign">Sign up</a></li>
                 <li><a class="connect-button">Connect</a></li>
@@ -32,7 +35,6 @@
                 </form> 
             </ul>
         </nav>
-
         <div class="menu">
             <img class="menu-image" src="/images/menu.png" alt="">
             <div class="small-screen">
@@ -40,8 +42,13 @@
                     <span class="menu-close-button">x</span>
                     <li><a href="/">Accueil</a></li>
                     <li><a href="/polls.html">Polls</a></li>
+                <% if (locals.user) { %>  
+                    <li><a class="logout">Disconnect</a></li>
+                    <% } else { %>
                     <li><a class="sign">Sign up</a></li>
                     <li><a class="connect-button">Connect</a></li>
+                    <% } %>                      
+                       
                     <li class="media-input"><input class="media-dayNight" type="checkbox" id="switch" /><label for="switch"></label></li>
                 </ul>
             </div>

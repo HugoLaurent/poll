@@ -116,7 +116,7 @@ const userAuthController = {
 
     req.session.userId = user.id;
 
-    res.redirect("/")
+    res.render("frontPage", {polls, votes});
 
   },
 

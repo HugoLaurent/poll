@@ -56,7 +56,6 @@
     <%- include('partials/connect.ejs') %>
 
     <!-- POP UP FOR THE CREATE FORM -->
-
     <section class="create form">
         <span class="to-close-create">x</span>
         <h1>Create a poll</h1>
@@ -67,7 +66,11 @@
                         <li><input placeholder="First choice" type="text"></li>
                         <li><input placeholder="Second choice" type="text"></li>
                     </ul>
+                    <% if (locals.user) { %>
                     <button type="submit">Validate</button>
+                    <% } else { %>
+                        <p style="color:red">Plz signup before create poll</p>
+                    <% } %>
                 </form>
     </section>
 </main>
