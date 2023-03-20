@@ -4,12 +4,7 @@ const mainController = {
 
   // méthode pour la page d'accueil
   async homePage(req, res){
-
-    req.session.vote = req.session.vote || [];
-    const votes = req.session.vote;
-   
-    req.session.guest = true;
-    const guest = req.session.guest;
+    
     try{
       const polls = await Poll.findAll({
         include: [
@@ -20,7 +15,7 @@ const mainController = {
           }
         ]
       });       
-      res.render("frontPage", { polls, guest, votes });
+      res.render("frontPage", {polls});
       console.log(req.session);
     } catch (error) {
       res.status(500).send('Une erreur est survenue');
@@ -39,22 +34,16 @@ const mainController = {
           association: "author",
           attributes: ["pseudo"]
         }
-      ]});
-
-    req.session.vote = req.session.vote || [];
-    const votes = req.session.vote;    
-    
+      ]});     
     
     if(!choice) {
-      const guest = req.session.guest;
-      res.render('frontPage', {polls, guest, votes, errorMessage: "Please make a choice on the poll before submitting it"});
+      
+      res.render('frontPage', {polls, errorMessage: "Please make a choice on the poll before submitting it"});
       return;
 
-    } else {
-      
-      const guest = req.session.guest;
+    } else {       
       await Poll.increment(choice, {where: {id: pollId }} );  
-      votes.push(pollId);          
+      res.locals.votes.push(pollId);          
       res.redirect('/');
     }
   }

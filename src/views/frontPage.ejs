@@ -40,7 +40,8 @@
                     <span class="coming-soon"></span>
                     <input type="hidden" id="id" name="id" value="<%=poll.id%>">
                 </div>                              
-                <p class="poll-footer-vote"><%=poll.result_a + poll.result_b %> votes</p>                                
+                <p class="poll-footer-vote"><%=poll.result_a + poll.result_b %> votes</p>
+                <% const votes = locals.votes %>                                
                 <% if(!votes.includes(poll.id)) {%>
                 <button class="article-button" type="submit">Validate</button>
                 <% } %>  
