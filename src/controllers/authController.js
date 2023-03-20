@@ -92,7 +92,7 @@ const userAuthController = {
       res.render("frontPage", {errorMessage: "Incorrect password"});
       return;
     }
-
+    req.session.userRole = user.role;
     req.session.userId = user.id;
 
     res.redirect("/");

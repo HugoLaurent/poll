@@ -15,7 +15,7 @@ const loadToLocals = async (req,res,next) =>{
         const polls = await Poll.findAll({
             include: [
               {
-                order: ["title"],
+                order: ["question"],
                 association: "author",
                 attributes: ["pseudo"]
               }
