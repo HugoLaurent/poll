@@ -11,7 +11,7 @@ const router = require('./src/routers/router');
 const sessionMiddleware = require("./src/middlewares/sessionMiddleware");
 const middleware404 = require("./src/middlewares/404");
 const authentifyRequestMiddleware = require("./src/middlewares/authentifyRequestMiddleware");
-const loadGuestToLocals = require("./src/middlewares/guest");
+const loadToLocals = require("./src/middlewares/memoryLocals");
 
 
 // un peu de config
@@ -26,10 +26,11 @@ app.set('view engine', 'ejs');
 app.set('views', 'src/views');
 
 app.use(sessionMiddleware);
-//Crée un guest
-app.use(loadGuestToLocals);
-
 app.use(authentifyRequestMiddleware);
+//Crée un guest
+app.use(loadToLocals);
+
+
 
 // servir les fichiers statiques qui sont dans "public"
 app.use(express.static('public'));

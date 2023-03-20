@@ -22,7 +22,7 @@
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/polls.html">Polls</a></li>
                 <% if (locals.user && locals.user.role === "admin") { %>
-                    <a class="admin" href="">Manage</a>
+                    <a class="admin" href="/dashboard">Admin</a>
                   <% } %>
                 <% if (locals.user) { %>
                     <a class="logout" href="/logout">Disconnect</a>
