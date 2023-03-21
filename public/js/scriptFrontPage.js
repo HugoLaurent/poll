@@ -26,7 +26,11 @@ const menuClose         = document.querySelector('.menu-close-button');
 const menuBurger        = document.querySelector('.menu-image');
 const insideMenu        = document.querySelector('.small-screen');
 
+const test              = document.querySelector('.test');
 
+test.addEventListener('click', () => {
+    test.style.backgroundColor = 'blue'
+})
 
 
 
@@ -45,7 +49,7 @@ const articles = document.querySelectorAll("article");
 articles.forEach(article => {
     article.style.borderTopLeftRadius       = `${randomBorder(255, 155, 1)}px ${randomBorder(50, 10, 1)}px`
     article.style.borderTopRightRadius      = `${randomBorder(50, 10, 1)}px ${randomBorder(255, 155, 1)}px`
-    article.style.borderBottomLeftRadius    = ` ${randomBorder(255, 155, 1)}px ${randomBorder(50, 10, 1)}px`
+    article.style.borderBottomLeftRadius    = `${randomBorder(255, 155, 1)}px ${randomBorder(50, 10, 1)}px`
     article.style.borderBottomRightRadius   = `${randomBorder(50, 10, 1)}px ${randomBorder(255, 155, 1)}px`
 });
 
