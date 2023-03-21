@@ -23,7 +23,9 @@ router.post('/login', userAuthController.handleLoginForm);
 //Route pour logout
 router.get('/logout', userAuthController.logoutAndRedirect);
 
+//Route pour les admins
 router.get('/dashboard', isAdmin, adminController.homeAdminPage);
+/* router.post('/dashboard', isAdmin, adminController.changeRoleUser); */
 
 
 

@@ -1,22 +1,36 @@
 <%- include('./partials/header') %>
 <h2 class="category-title">Most Popular</h2>
 <main>
-      
+    <p></p>
     <h1>Bienvenue sur le Tableau de controle de Poll</h1>
+    <form action='' method='post'>    
+            
+        <form action='' method='post'>
+            <label style="padding: 10px 60px;" for="selectUser">Choice User :</label>
+            <select style="width: 150px; height: 50px;" name="selectUser" id="selectUser">
+                <option value="">Select User</option>
+                <% for(user of users) {%>
+                  <option value="<%= user.id %>"><%= user.pseudo %></option>
+               <% } %>
+            </select>
+            <br><br>
+            <label style="padding: 10px 60px;" for="selectRole">Choice Role :</label>
+            <select style="width: 150px; height: 50px;" name="selectRole" id="selectRole">
+               <option value="">Select Role</option>
+               <option value="admin">Admin</option>              
+               <option value="member">User</option>
+            </select>
+            <br><br>
+            <input type='submit' value='Valider'/>            
 
-    <form action='' method='post'>
-        <select name="myselectbox">
-        <% for(user of users) {%>
-         <option name="<%= user.pseudo %>" value="<%= user.id %>"><%= user.pseudo %></option>
-          <% } %>
-         <input type='submit' value='submit'/>
-    </form>
-    
-    <!-- POP UP FOR THE SIGN UP FORM -->
-    <%- include('partials/signup.ejs') %>
+            <h2><%= Message %></h2>
+         
+         
 
-    <!-- POP UP FOR THE CONNECT FORM -->
-    <%- include('partials/connect.ejs') %>
+
+
+
+    </form> 
    
 </main>
 

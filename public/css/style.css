@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
 
+.test {
+    background-color: red;
+}
+
+
 :root {
     --body-bg: #f1f1f2;
     --border-main-color: black;
