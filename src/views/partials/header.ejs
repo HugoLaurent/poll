@@ -11,44 +11,29 @@
 <body>
   
     <header>
-        <h1><a href="/">Poll's</a></h1>
-        <h2 style="color:red;"><% if(locals.errorMessage) { %>
-            <p><%= errorMessage %></p>
-            <% } %></h2>
+        <h1 class="header-title"><a href="/">Poll's</a></h1>
         <nav>
-            <ul class="big-screen">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/polls.html">Polls</a></li>
+            <ul class="header-navbar">
+                <li class="navbar-button"><a href="/">Accueil</a></li>
+                <li class="navbar-button"><a href="/polls.html">Polls</a></li>
+
                 <% if (locals.user && locals.user.role === "admin") { %>
-                    <a class="admin" href="/dashboard">Admin</a>
+                    <li class="navbar-button"><a class="navbar-admin" href="/dashboard">Admin</a></li>
                   <% } %>
+
                 <% if (locals.user) { %>
-                    <a class="logout" href="/logout">Disconnect</a>
+                    <li class="navbar-button"><a class="navbar-logout" href="/logout">Log out</a></li>
                 <% } else { %>
-                <li><a class="sign">Sign up</a></li>
-                <li><a class="connect-button">Connect</a></li>
+                    <li class="navbar-button"><a class="navbar-sign">Sign up</a></li>
+                    <li class="navbar-button"><a class="navbar-connect">Connect</a></li>
                 <% } %>
-                <form action="" method="PO">
-                <li class="input"><input class="dayNight" type="checkbox" id="switch"/><label for="switch"></label></li>
+
+                <form action="" method="POST">
+                    <li class="header-navbar-switch-container">
+                        <input class="dark-theme-switch" type="checkbox" id="switch"/>
+                        <label for="switch"></label>
+                    </li>
                 </form> 
             </ul>
         </nav>
-        <div class="menu">
-            <img class="menu-image" src="/images/menu.png" alt="">
-            <div class="small-screen">
-                <ul>
-                    <span class="menu-close-button">x</span>
-                    <li><a href="/">Accueil</a></li>
-                    <li><a href="/polls.html">Polls</a></li>
-                <% if (locals.user) { %>  
-                    <li><a class="logout">Disconnect</a></li>
-                    <% } else { %>
-                    <li><a class="sign">Sign up</a></li>
-                    <li><a class="connect-button">Connect</a></li>
-                    <% } %>                      
-                       
-                    <li class="media-input"><input class="media-dayNight" type="checkbox" id="switch" /><label for="switch"></label></li>
-                </ul>
-            </div>
-        </div>
     </header>
