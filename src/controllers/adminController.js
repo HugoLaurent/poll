@@ -11,9 +11,9 @@ const adminController = {
 catch (error) {
     res.status(500).send('Une erreur est survenue');
   }
-}
+},
 
-    /* async changeRoleUser (req,res) {
+    async changeRoleUser (req,res) {
         console.log(req.body);
         const role = req.body.selectRole;
         const id = req.body.selectUser
@@ -28,7 +28,7 @@ catch (error) {
             where: user
         });
         res.render('/dashboard', {Message: "Update Sucess"  });
-    } */
+    }
 }
 
 module.exports = adminController;
