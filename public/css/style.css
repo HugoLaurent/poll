@@ -257,8 +257,8 @@ main {
 .poll-footer-vote {
     margin: 0;
 }
-/* SHARED BUTTON  */
 
+/* SHARED BUTTON  */
 .poll-footer-share {
     display: flex;
     align-items: center;
@@ -440,7 +440,7 @@ main {
     margin: .5rem;
     cursor: pointer;
     font-family: 'Patrick Hand SC', cursive;
-    
+    transition: border-top-left-radius .5s;
 }
 
 .submit-button:hover {
@@ -476,4 +476,8 @@ main {
 
 .create-form-warning {
     font-size: 2rem;
+}
+
+.connect-container {
+    min-width: 35%;
 }
