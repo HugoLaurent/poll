@@ -7,8 +7,18 @@ const mainController = {
     
     try{    
       req.session.guest = true
-      res.render("index");
-      console.log(req.session);
+      const polls = await Poll.findAll({
+        include: [
+          {
+            order: ["title"],
+            association: "author",
+            attributes: ["pseudo"]
+          }
+        ]
+      });
+      
+      res.render("index", {polls});
+      //console.log(req.session);
     } catch (error) {
       res.status(500).send('Une erreur est survenue');
     }
