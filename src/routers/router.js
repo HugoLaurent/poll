@@ -20,6 +20,9 @@ router.post('/signup', userAuthController.handleSignUpForm);
 router.get('/login', mainController.homePage);
 router.post('/login', userAuthController.handleLoginForm);
 
+//Route pour polls
+router.get('/polls', mainController.pollPage)
+
 //Route pour logout
 router.get('/logout', userAuthController.logoutAndRedirect);
 

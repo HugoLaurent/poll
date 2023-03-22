@@ -1,0 +1,19 @@
+<section class="create-container form-container">
+    <span class="form-button-close create-close">x</span>
+    <h1 class="form-title">Create a poll</h1>
+            <form class="form-list-container"" action="" method="POST">
+                <ul class="form-list">
+                    <li><input placeholder="Title of your poll" type="text"></li>
+                    <li><input placeholder="The question of your poll" type="text"></li>
+                    <li><input placeholder="First choice" type="text"></li>
+                    <li><input placeholder="Second choice" type="text"></li>
+                </ul>
+
+                <% if (locals.user) { %>
+                <button class="connect-form-submit submit-button"  type="submit">Validate</button>
+                <% } else { %>
+                    <p style="color:red">Plz signup before create poll</p>
+                <% } %>
+
+            </form>
+</section>

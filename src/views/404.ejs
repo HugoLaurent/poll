@@ -1,11 +1,48 @@
 <%- include('./partials/header') %>
-<h2 class="category-title">Popular</h2>
+
 <main>
     
     
-    <h1>404 error!</h1>
-    <h2>Be careful you got lost,the right way is there <a style="text-decoration: none; "href="/">here</a></h2>
+    
 
+    <article class="poll-container">
+        <form method="POST" action="/">
+            <% const pourcentA = 404 %>
+            <% const pourcentB = 0 %>
+        <div class="poll-header">                
+            <h2 class="poll-header-title">Where Am I?</h2>
+            <p class="poll-header-author">John Doe</p>
+        </div>
+        <p class="poll-question">Are you lost?</p>
+        
+            <div class="poll-wrapper">
+                <input class="poll-wrapper-checkbox" type="checkbox" id="first" name="choice" value="result_a">
+                <div class="poll-progressbar-wrapper">
+                    <div class="poll-progressbar" style="width: <%=pourcentA%>%" title="first_choice">
+                        <p class="poll-progressbar">Yes</p>
+                    </div>
+                </div>
+                <span class="poll-progressbar-pourcent"><%=pourcentA%>%</span>
+            </div>
+            <div class="poll-wrapper">
+                <input class="poll-wrapper-checkbox" type="checkbox" id="second" name="choice" value="result_b">          
+                <div class="poll-progressbar-wrapper">
+                    <div class="poll-progressbar" style="width: <%=pourcentB%>%" title="second_choice" >
+                        <p>No</p>
+                    </div>
+                </div>
+                <span class="poll-progressbar-pourcent"><%=pourcentB%>%</span>
+            </div>               
+        <div class="poll-footer">
+            <div class="poll-footer-share">
+                <img class="share-button" src="/images/share.svg" alt="">
+                <span class="coming-soon"></span>
+                <input type="hidden" id="id" name="id" value="<%=404%>">
+            </div>                              
+            <p class="poll-footer-vote">404votes</p>
+        </div>
+    </form>
+    </article>
     
     <!-- POP UP FOR THE SIGN UP FORM -->
     <%- include('partials/signup.ejs') %>
@@ -15,22 +52,8 @@
 
     <!-- POP UP FOR THE CREATE FORM -->
 
-    <section class="create form">
-        <span class="to-close-create">x</span>
-        <h1>Create a poll</h1>
-                <form class="popup" action="" method="POST">
-                    <ul>
-                        <li><input placeholder="Title of your poll" type="text"></li>
-                        <li><input placeholder="The question of your poll" type="text"></li>
-                        <li><input placeholder="First choice" type="text"></li>
-                        <li><input placeholder="Second choice" type="text"></li>
-                    </ul>
-                    <button type="submit">Validate</button>
-                </form>
-    </section>
+    
 </main>
 
-<script src="/js/scriptFrontPage.js"></script>
-    </body>
-</html>
 
+<%- include('partials/footer.ejs') %>
