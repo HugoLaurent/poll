@@ -20,14 +20,15 @@ const mainController = {
     const pollId = Number(req.body.id);
     
     if(!choice) {
-      
-      res.render('frontPage', {errorMessage: "Please make a choice on the poll before submitting it"});
+      res.render('frontPage', { errorMessage: "Please make a choice on the poll before submitting it" });
       return;
-
     } else {       
-      await Poll.increment(choice, {where: {id: pollId }} );  
-      res.locals.votes.push(pollId);          
-      res.redirect('/');
+        await Poll.increment(choice, { 
+          where: { 
+            id: pollId 
+          }});  
+        res.locals.votes.push(pollId);          
+        res.redirect('/');
     }
   },
 

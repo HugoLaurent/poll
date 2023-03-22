@@ -3,6 +3,11 @@
                     <button class="footer-create-button">Create a poll</button>
                 </div>
             </footer>
+            <% if (locals.user) { %>
+                <script src="/js/whenConnected.js"></script>
+            <% } else { %>
+                <script src="/js/whenNotConnected.js"></script>
+            <% } %>
             <script src="/js/index.js"></script>
     </body>
 </html>

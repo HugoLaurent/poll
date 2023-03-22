@@ -95,7 +95,7 @@ const userAuthController = {
     req.session.userRole = user.role;
     req.session.userId = user.id;
 
-    res.render("index");
+    res.redirect("/");
 
   },
 
