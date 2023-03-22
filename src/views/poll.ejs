@@ -1,49 +1,7 @@
 <%- include('./partials/header') %>
 
-<% if (locals.user && locals.user.role === "admin") { %>
-    <h1>Create your poll</h1>
-    <article class="poll-container">
-        <form method="POST" action="/">
-            <% const pourcentA = 0 %>
-            <% const pourcentB = 0 %>
-        <div class="poll-header">
-              
-            <input placeholder="Your Title" type="text" name="create-title" id="">
-            
-            <p class="poll-header-author">To code</p>
-        </div>
-        <input placeholder="Your Question" type="text" name="create-question" id="">
-        
-            <div class="poll-wrapper">
-                <input class="poll-wrapper-checkbox" type="checkbox" id="first" name="choice" value="result_a">
-                <div class="poll-progressbar-wrapper">
-                    <div class="poll-progressbar" style="width: <%=pourcentA%>%" title="first_choice">
-                        <p class="poll-progressbar">Yes</p>
-                    </div>
-                </div>
-                <span class="poll-progressbar-pourcent"><%=pourcentA%>%</span>
-            </div>
-            <div class="poll-wrapper">
-                <input class="poll-wrapper-checkbox" type="checkbox" id="second" name="choice" value="result_b">          
-                <div class="poll-progressbar-wrapper">
-                    <div class="poll-progressbar" style="width: <%=pourcentB%>%" title="second_choice" >
-                        <p>No</p>
-                    </div>
-                </div>
-                <span class="poll-progressbar-pourcent"><%=pourcentB%>%</span>
-            </div>               
-        <div class="poll-footer">
-            <div class="poll-footer-share">
-                <img class="share-button" src="/images/share.svg" alt="">
-                <span class="coming-soon"></span>
-                <input type="hidden" id="id" name="id" value="<%=404%>">
-               
-            </div>                              
-             <button>Submit My Poll</button>
-        </div>
-    </form>
-    </article>
-  <% } %>
+
+ 
 
 
 

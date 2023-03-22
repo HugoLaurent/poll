@@ -36,6 +36,11 @@ header {
     flex-wrap: wrap;
 }
 
+header img {
+    max-width: 20%;
+    margin-top: 1rem;
+}
+
 .header-title {
     font-size: 5rem;
     cursor: pointer;
@@ -371,6 +376,7 @@ main {
 
 .form-title {
     font-size: 4rem;
+    margin: 0;
 }
 
 .form-list input {
@@ -386,14 +392,13 @@ main {
 
 .signup-conditions-list {
     display: flex;
-    flex-direction: column;
-    justify-content: baseline;
-    align-items: start;
+    align-items: center;
+    justify-content: center;
 }
 
-.signup-conditions-list li {
-    display: flex;
-    align-items: center;
+.signup-conditions-list p {
+    max-width: 50%;
+    font-size: 1.5rem;
 }
 
 .signup-conditions-checkbox[type="checkbox"] {
@@ -447,3 +452,28 @@ main {
     font-weight: bolder;
 }
 
+/* CREATE FORM */
+
+.create-input {
+    background-color: transparent;
+    all: unset;
+    color: black;
+}
+
+.create-input-title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.create-input-question {
+    font-size: 2rem;
+}
+
+.create-form-title {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.create-form-warning {
+    font-size: 2rem;
+}

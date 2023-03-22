@@ -1,19 +1,41 @@
 <section class="create-container form-container">
+    <h1 class="create-form-title">Create your poll</h1>
     <span class="form-button-close create-close">x</span>
-    <h1 class="form-title">Create a poll</h1>
-            <form class="form-list-container"" action="" method="POST">
-                <ul class="form-list">
-                    <li><input placeholder="Title of your poll" type="text"></li>
-                    <li><input placeholder="The question of your poll" type="text"></li>
-                    <li><input placeholder="First choice" type="text"></li>
-                    <li><input placeholder="Second choice" type="text"></li>
-                </ul>
-
-                <% if (locals.user) { %>
-                <button class="connect-form-submit submit-button"  type="submit">Validate</button>
-                <% } else { %>
-                    <p style="color:red">Plz signup before create poll</p>
-                <% } %>
-
-            </form>
+    <article class="poll-container">
+        <form method="POST" action="/">
+            <% const pourcentA = 0 %>
+            <% const pourcentB = 0 %>
+            <div class="poll-header"> 
+                <input class="create-input create-input-title" placeholder="Your Title" type="text" name="create-title" id="">
+            </div>
+            <input class="create-input create-input-question" placeholder="Your Question" type="text" name="create-question" id="" autofocus>
+            <div class="poll-wrapper">
+                <input class="poll-wrapper-checkbox" type="checkbox" id="first" name="choice" value="result_a">
+                <div class="poll-progressbar-wrapper">
+                    <div class="poll-progressbar" style="width: <%=pourcentA%>%" title="first_choice">
+                        <input class="create-input create-input-choice" placeholder="Your First Choice" type="text" name="create-first-choice" id="">
+                    </div>
+                </div>
+                <span class="poll-progressbar-pourcent"><%=pourcentA%>%</span>
+            </div>
+            <div class="poll-wrapper">
+                <input class="poll-wrapper-checkbox" type="checkbox" id="second" name="choice" value="result_b">          
+                <div class="poll-progressbar-wrapper">
+                    <div class="poll-progressbar" style="width: <%=pourcentB%>%" title="second_choice" >
+                        <input class="create-input create-input-choice" placeholder="Your Second Choice" type="text" name="create-second-choice" id="">
+                    </div>
+                </div>
+                <span class="poll-progressbar-pourcent"><%=pourcentB%>%</span>
+            </div>               
+            <div class="poll-footer">
+                <div class="poll-footer-share">
+                    <img class="share-button" src="/images/share.svg" alt="">
+                    <span class="coming-soon"></span>
+                    <input type="hidden" id="id" name="id" value="<%=404%>">
+                </div>                              
+                <button class="article-button" type="submit">Validate</button>
+            </div>
+        </form>
+    </article>
+    <p class="create-form-warning">You need to sign up before creating a poll</p>
 </section>
