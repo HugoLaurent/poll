@@ -32,10 +32,14 @@
                     <img class="share-button" src="/images/share.svg" alt="">
                     <span class="coming-soon"></span>
                     <input type="hidden" id="id" name="id" value="<%=404%>">
-                </div>                              
+                </div> 
+                <% if (locals.user) { %>                             
                 <button class="article-button" type="submit">Validate</button>
+                <% } %>
             </div>
         </form>
     </article>
+    <% if (!locals.user) { %>
     <p class="create-form-warning">You need to sign up before creating a poll</p>
+    <% } %>
 </section>
