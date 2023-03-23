@@ -57,6 +57,47 @@ switchDarkMode.addEventListener('click', () => {
     toDarkMode('.create-input-title', 'dark-a')
 });
 
+// CATEGOIES TO APPEAR 
+
+const categories = document.querySelectorAll('.poll-category-list li')
+
+// const selectedNumber = [];
+
+//  function randomSelect () {
+//     const select = Math.round(Math.random()*categories.length)
+//     selectedNumber.push(select)
+// }
+
+// function randomizeSize () {
+//     for (i = 0; i < 30; i++) {
+//     categories[i].style.color = 'red'
+//     randomSelect();
+//     }
+// }
+
+// function randomizeSize() {
+//     const randomIndex = Math.floor(Math.random() * categories.length);
+//     const newSize = Math.floor(Math.random() * 50) + 20;
+//     categories[randomIndex].style.fontSize = newSize + 'px';
+//     categories[randomIndex].style.transition = 'font-size 1s ease-in';
+//   }
+  
+//   setInterval(randomizeSize, 500);
+
+
+// // setInterval(randomizeSize, 1000);
+
+// console.log(selectedNumber);
+
+// JE VEUX SELECTIONNER CHAQUE ELEMENT 1 PAR 1 ET JE DOIS VERIFIER QUE CET ELEMENT N'AS PAS ETE MODIF
+
+
+var horizontalScroll = document.querySelector('.horizontal-scroll');
+horizontalScroll.addEventListener('wheel', function(event) {
+  event.preventDefault();
+  horizontalScroll.scrollLeft += event.deltaY;
+});
+
 
     
 

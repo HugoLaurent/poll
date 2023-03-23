@@ -488,19 +488,25 @@ main {
     justify-content: space-around;
     flex-wrap: wrap;
 }
+  
+
 
 .poll-category-list {
     display: flex;
+    justify-content: space-between;
+    gap: 4rem;
     font-size: 3rem;
-    flex-wrap: wrap;
-    margin: 2rem;
+    overflow-y: scroll;
+    white-space: nowrap;
     gap: 3rem;
-    justify-content: space-evenly;
     cursor: pointer;
+    margin-bottom: 2rem;
+    overflow: hidden;
 }
 
 .poll-category-list li {
     list-style: none;
+    width: fit-content;
 }
 
 .poll-category-list li:nth-child(odd):hover {
