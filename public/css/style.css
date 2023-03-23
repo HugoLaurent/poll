@@ -535,10 +535,6 @@ main {
         font-size: 1rem;
     }
 
-    .signup-container {
-        
-    }
-
     .connect-container {
         padding: 0;
     }
@@ -567,6 +563,51 @@ main {
         content: '\1F319';
         left: 0;
         transform: none;
+    }
+
+    .signup-container {
+        margin: 2rem;
+    }
+
+    .signup-container ul {
+        padding: 0;
+    }
+
+    .signup-conditions-list {
+        gap: 2rem;
+    }
+
+    .create-container {
+        margin: .5rem;
+    }
+
+    .create-form-title {
+        font-size: 2rem;
+    }
+
+    .form-button-close {
+        font-size: 1.5rem;
+    }
+
+    .create-input {
+        font-size: 2rem;
+        margin-left: 1rem;
+        text-align: left;
+    }
+
+    .create-poll-counter {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .create-form-warning {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .poll-footer {
+        display: flex;
+        justify-content: center;
     }
 }
 

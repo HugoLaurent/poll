@@ -26,18 +26,15 @@
                 <span class="poll-progressbar-pourcent"><%=pourcentB%>%</span>
             </div>               
             <div class="poll-footer">
-                <div class="poll-footer-share">
-                    <img class="share-button" src="/images/share.svg" alt="">
-                    <span class="create-poll-counter">polls already created</span>
-                    <input type="hidden" id="id" name="id" value="<%=404%>">
-                </div> 
+                    <span class="create-poll-counter"> 3654 polls already created</span>
                 <% if (locals.user) { %>                             
-                <button class="article-button" type="submit">Validate</button>
-                <% } %>
+                    <button class="article-button" type="submit">Validate</button>
+                <% } %> 
             </div>
+            <% if (!locals.user) { %>
+                <p class="create-form-warning">You need to sign up before creating a poll</p>
+            <% } %>
         </form>
     </article>
-    <% if (!locals.user) { %>
-    <p class="create-form-warning">You need to sign up before creating a poll</p>
-    <% } %>
+   
 </section>
