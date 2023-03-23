@@ -9,13 +9,15 @@
     <title>Poll's</title>
 </head>
 <body>
-  
+    
     <header>
         <!-- <h1 class="header-title"><a href="/">Poll's</a></h1> -->
-        <img src="/images/logo.png" alt="">
-        <nav>
+        
+            <img class="header-images-logo" src="/images/logo.png" alt="">
+            <!-- <img class="header-images-burger" src="/images/burger.png" alt=""> -->
+        
+        <div class="navbar-responsive">
             <ul class="header-navbar">
-                <li class="navbar-button"><a href="/">Accueil</a></li>
                 <li class="navbar-button"><a href="/polls">Polls</a></li>
 
                 <% if (locals.user && locals.user.role === "admin") { %>
@@ -25,7 +27,7 @@
                 <% if (locals.user) { %>
                     <li class="navbar-button"><a class="navbar-logout" href="/logout">Log out</a></li>
                 <% } else { %>
-                    <li class="navbar-button"><a class="navbar-sign">Sign up</a></li>
+                    <li class="navbar-button signup-responsive"><a class="navbar-sign">Sign up</a></li>
                     <li class="navbar-button"><a class="navbar-connect">Connect</a></li>
                 <% } %>
 
@@ -36,5 +38,6 @@
                     </li>
                 </form> 
             </ul>
-        </nav>
+        </div>
+        
     </header>
