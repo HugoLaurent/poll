@@ -11,6 +11,8 @@ const loadToLocals = async (req,res,next) =>{
         req.session.vote = req.session.vote || [];
         const votes = req.session.vote;
         res.locals.votes = votes
+        
+        res.locals.userId = req.session.userId;
 
         const polls = await Poll.findAll({
             include: [
