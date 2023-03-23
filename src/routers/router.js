@@ -1,9 +1,12 @@
 const express = require('express');
 const mainController = require('../controllers/mainController');
+const pollController = require('../controllers/pollController');
 const userAuthController = require('../controllers/authController');
 const adminController = require('../controllers/adminController');
 
+
 const isAdmin = require('../middlewares/isAdmin');
+
 
 
 const router = express.Router();
@@ -20,15 +23,24 @@ router.post('/signup', userAuthController.handleSignUpForm);
 router.get('/login', mainController.homePage);
 router.post('/login', userAuthController.handleLoginForm);
 
-//Route pour polls
-router.get('/polls', mainController.pollPage)
 
-//Route pour logout
-router.get('/logout', userAuthController.logoutAndRedirect);
+
+//Route pour polls
+router.get('/polls', mainController.pollPage);
+
+//Route pour create Poll
+router.get('/create', mainController.homePage);
+router.post('/create', pollController.createPoll);
 
 //Route pour les admins
 router.get('/dashboard', isAdmin, adminController.homeAdminPage);
 router.post('/dashboard', isAdmin, adminController.changeRoleUser);
+
+//Route pour logout
+router.get('/logout', userAuthController.logoutAndRedirect);
+
+
+
 
 
 
