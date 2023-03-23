@@ -1,7 +1,7 @@
 <section class="create-container form-container">
     <h1 class="create-form-title">Create your poll</h1>
     <span class="form-button-close create-close">x</span>
-    <article class="poll-container">
+    <article class="create-poll-container">
         <form method="POST" action="/">
             <% const pourcentA = 0 %>
             <% const pourcentB = 0 %>
@@ -10,7 +10,6 @@
             </div>
             <input class="create-input create-input-question" placeholder="Your Question" type="text" name="create-question" id="" autofocus>
             <div class="poll-wrapper">
-                <input class="poll-wrapper-checkbox" type="checkbox" id="first" name="choice" value="result_a">
                 <div class="poll-progressbar-wrapper">
                     <div class="poll-progressbar" style="width: <%=pourcentA%>%" title="first_choice">
                         <input class="create-input create-input-choice" placeholder="Your First Choice" type="text" name="create-first-choice" id="">
@@ -18,8 +17,7 @@
                 </div>
                 <span class="poll-progressbar-pourcent"><%=pourcentA%>%</span>
             </div>
-            <div class="poll-wrapper">
-                <input class="poll-wrapper-checkbox" type="checkbox" id="second" name="choice" value="result_b">          
+            <div class="poll-wrapper">      
                 <div class="poll-progressbar-wrapper">
                     <div class="poll-progressbar" style="width: <%=pourcentB%>%" title="second_choice" >
                         <input class="create-input create-input-choice" placeholder="Your Second Choice" type="text" name="create-second-choice" id="">
@@ -30,7 +28,7 @@
             <div class="poll-footer">
                 <div class="poll-footer-share">
                     <img class="share-button" src="/images/share.svg" alt="">
-                    <span class="coming-soon"></span>
+                    <span class="create-poll-counter">polls already created</span>
                     <input type="hidden" id="id" name="id" value="<%=404%>">
                 </div> 
                 <% if (locals.user) { %>                             
