@@ -2,9 +2,9 @@ const { User, Poll } = require('../src/models');
 
 async function populateTables(){
     await User.bulkCreate([
-      {pseudo:"MikeRS", firstname: "Michael", lastname:"Dutheil", email:"mike@oclock.io", password: "123456", role:"member"},
-      {pseudo:"Anais49", firstname: "Anais", lastname:"Oclock", email:"anais@oclock.io", password: "mug", role:"member"},
-      {pseudo:"Pacron", firstname: "Emmanuel", lastname:"Pacron", email:"emmanuel@oclock.io", password: "brigitte", role:"member"}
+      {pseudo:"MikeRs", firstname: "Michael", lastname:"Dutheil", email:"mike@oclock.io", password: "12345678", role:"admin"},
+      {pseudo:"Anais49", firstname: "Anais", lastname:"Oclock", email:"anais@oclock.io", password: "12345678", role:"member"},
+      {pseudo:"Pacron", firstname: "Emmanuel", lastname:"Pacron", email:"emmanuel@oclock.io", password: "12345678", role:"member"}
     ]);
     await Poll.bulkCreate([
       {title: "O'clock",question: "Vous voulez vos mugs ?",choice_a: "Non",choice_b:"Non",result_a: 0, result_b:0, user_id: 2},

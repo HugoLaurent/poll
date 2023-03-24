@@ -19,13 +19,13 @@ const PORT = process.env.PORT || 3000;
 
 // Création de l'application express
 const app = express();
-
+app.use(sessionMiddleware);
 
 // Configurer le view engine
 app.set('view engine', 'ejs');
 app.set('views', 'src/views');
 
-app.use(sessionMiddleware);
+
 app.use(authentifyRequestMiddleware);
 //Crée un guest
 app.use(loadToLocals);

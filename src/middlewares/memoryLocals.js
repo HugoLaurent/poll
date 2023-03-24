@@ -1,5 +1,4 @@
-const { Poll } = require("../models")
-const bcrypt = require('bcrypt');
+const { Poll } = require("../models");
 
 const loadToLocals = async (req,res,next) =>{
     if(req.session){
@@ -24,6 +23,15 @@ const loadToLocals = async (req,res,next) =>{
             ]
           });
         res.locals.polls = polls
+
+        const totalPoll = await Poll.count();
+        res.locals.totalPoll = totalPoll;
+
+        const totalResultA = await Poll.sum("result_a");
+        const totalResultB = await Poll.sum("result_b");
+        const totalVote = totalResultA + totalResultB;
+        res.locals.totalVote = totalVote;
+        
     }
     
     next();   

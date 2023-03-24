@@ -2,7 +2,7 @@
     <h1 class="create-form-title">Create your poll</h1>
     <span class="form-button-close create-close">x</span>
     <article class="create-poll-container">
-        <form method="POST" action="/">
+        <form method="POST" action="/create">
             <% const pourcentA = 0 %>
             <% const pourcentB = 0 %>
             <div class="poll-header"> 
@@ -24,9 +24,10 @@
                     </div>
                 </div>
                 <span class="poll-progressbar-pourcent"><%=pourcentB%>%</span>
-            </div>               
+            </div>   
+            <input type="hidden" text="text" name="user_id" id="id" value="<%=locals.userId %>">            
             <div class="poll-footer">
-                    <span class="create-poll-counter"> 3654 polls already created</span>
+                    <span class="create-poll-counter"> <%= locals.totalPoll %> polls already created and <%= totalVote %> submit</span>
                 <% if (locals.user) { %>                             
                     <button class="article-button" type="submit">Validate</button>
                 <% } %> 

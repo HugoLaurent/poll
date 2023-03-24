@@ -4,7 +4,7 @@ const Poll = require("./Poll");
 
 User.hasMany(Poll, {
     foreignKey: "user_id",
-    as: "polls" 
+    as: "poll" 
   });
 
 Poll.belongsTo(User, {

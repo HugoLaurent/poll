@@ -35,6 +35,7 @@ router.post('/create', pollController.createPoll);
 //Route pour les admins
 router.get('/dashboard', isAdmin, adminController.homeAdminPage);
 router.post('/dashboard', isAdmin, adminController.changeRoleUser);
+router.post('/pollDelete', isAdmin,adminController.deletePoll);
 
 //Route pour logout
 router.get('/logout', userAuthController.logoutAndRedirect);

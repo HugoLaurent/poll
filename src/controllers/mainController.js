@@ -30,7 +30,7 @@ const mainController = {
     const pollId = Number(req.body.id);
     
     if(!choice) {
-      res.render('frontPage', { errorMessage: "Please make a choice on the poll before submitting it" });
+      res.render('index', { errorMessage: "Please make a choice on the poll before submitting it" });
       return;
     } else {       
         await Poll.increment(choice, { 
