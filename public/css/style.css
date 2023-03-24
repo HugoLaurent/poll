@@ -501,7 +501,8 @@ main {
     gap: 3rem;
     cursor: pointer;
     margin-bottom: 2rem;
-    overflow: hidden;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
 }
 
 .poll-category-list li {
@@ -520,6 +521,27 @@ main {
 .poll-category-select {
     display: none;
 }
+
+.style-scroll::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+.style-scroll::-webkit-scrollbar
+{
+	width: 2px;
+    height: 7px;
+	background-color: #F5F5F5;
+}
+
+.style-scroll::-webkit-scrollbar-thumb
+{
+	background-color: var(--border-color-article);
+	border-radius: 10px;
+}
+
 
 
 
