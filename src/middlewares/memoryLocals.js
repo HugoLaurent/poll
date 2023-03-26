@@ -1,40 +1,40 @@
 const { Poll } = require("../models");
 
 const loadToLocals = async (req,res,next) =>{
-    if(req.session){
+  if(req.session){
 
-        req.session.guest = true;
-        const guest = req.session.guest;
-        res.locals.guest = guest
+    req.session.guest = true;
+    const guest = req.session.guest;
+    res.locals.guest = guest;
 
-        req.session.vote = req.session.vote || [];
-        const votes = req.session.vote;
-        res.locals.votes = votes
-        
-        res.locals.userId = req.session.userId;
+    req.session.vote = req.session.vote || [];
+    const votes = req.session.vote;
+    res.locals.votes = votes;
 
-        const polls = await Poll.findAll({
-            include: [
-              {
-                order: ["title"],
-                association: "author",
-                attributes: ["pseudo"]
-              }
-            ]
-          });
-        res.locals.polls = polls
+    res.locals.userId = req.session.userId;
 
-        const totalPoll = await Poll.count();
-        res.locals.totalPoll = totalPoll;
+    const polls = await Poll.findAll({
+      include: [
+        {
+          order: ["title"],
+          association: "author",
+          attributes: ["pseudo"]
+        }
+      ]
+    });
+    res.locals.polls = polls;
 
-        const totalResultA = await Poll.sum("result_a");
-        const totalResultB = await Poll.sum("result_b");
-        const totalVote = totalResultA + totalResultB;
-        res.locals.totalVote = totalVote;
-        
-    }
-    
-    next();   
+    const totalPoll = await Poll.count();
+    res.locals.totalPoll = totalPoll;
+
+    const totalResultA = await Poll.sum("result_a");
+    const totalResultB = await Poll.sum("result_b");
+    const totalVote = totalResultA + totalResultB;
+    res.locals.totalVote = totalVote;
+
+  }
+
+  next();
 
 };
 

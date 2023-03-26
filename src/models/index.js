@@ -13,15 +13,15 @@ Poll.belongsTo(User, {
   as: "author"
 });
 
-/* Category.hasMany(Poll, {
-  foreignKey: "poll_id",
-  as: "category"
+Category.hasMany(Poll, {
+  foreignKey: "tag_id",
+  as: "poll"
 });
 
 Poll.belongsTo(Category, {
-  foreignKey: "poll_id",
+  foreignKey: "tag_id",
   as: "category"
-}); */
+});
 
 
 module.exports = { User, Poll, Category };

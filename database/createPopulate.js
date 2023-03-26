@@ -7,17 +7,15 @@ async function populateTables(){
     {pseudo:"Pacron", firstname: "Emmanuel", lastname:"Pacron", email:"emmanuel@oclock.io", password: "12345678", role:"member"}
   ]);
   await Poll.bulkCreate([
-    {title: "O'clock",question: "Vous voulez vos mugs ?",choice_a: "Non",choice_b:"Non",result_a: 0, result_b:0, user_id: 2},
-    {title: "Système",question: "Pc ou Mac?",choice_a: "PC",choice_b:"MAc",result_a: 0, result_b:0, user_id: 1},
-    {title: "Politique",question: "Pour ou contre le 49.3",choice_a: "Oui",choice_b:"Oui",result_a: 0, result_b:0, user_id: 3},
-    {title: "Politique",question: "Pour ou contre la réforme des retraites",choice_a: "Oui",choice_b:"Oui",result_a: 0, result_b:0, user_id: 3},
+    {question: "Vous voulez vos mugs ?",choice_a: "Non",choice_b:"Non",result_a: 0, result_b:0, user_id: 2, tag_id: 3},
+    {question: "Pc ou Mac?",choice_a: "PC",choice_b:"MAc",result_a: 0, result_b:0, user_id: 1, tag_id: 2},
+    {question: "Pour ou contre le 49.3",choice_a: "Oui",choice_b:"Oui",result_a: 0, result_b:0, user_id: 3,tag_id: 1},
+    {question: "Pour ou contre la réforme des retraites",choice_a: "Oui",choice_b:"Oui",result_a: 0, result_b:0, user_id: 3, tag_id:1},
   ]);
   await Category.bulkCreate([
-    {name:"Amour"},
-    {name:"Argent"},
-    {name:"Art"},
-    {name:"Au quotidien"},
-    {name:"Automobile"},
+    {name:"Politique"},
+    {name:"Système"},
+    {name:"O'clock"},
   ]);
 
 }

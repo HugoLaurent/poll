@@ -1,13 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../sequelize-client");
+const Category = require("./Category");
 
 class Poll extends Model {}
 
 Poll.init({
-  title: {
-    type: DataTypes.TEXT,
-    allowNull: false
-  },
+
   question:{
     type: DataTypes.TEXT,
     allowNull: false
@@ -27,7 +25,8 @@ Poll.init({
   result_b:{
     type: DataTypes.INTEGER,
     allowNull: false
-  }
+  },
+
 
 }, {
   sequelize,
