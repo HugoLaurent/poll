@@ -493,7 +493,6 @@ main {
 
 .poll-category-list {
     display: flex;
-    justify-content: space-between;
     gap: 4rem;
     font-size: 3rem;
     overflow-y: scroll;
@@ -503,6 +502,7 @@ main {
     margin-bottom: 2rem;
     scroll-behavior: smooth;
     overflow: hidden;
+    align-items: center;
 }
 
 .poll-category-list li {
