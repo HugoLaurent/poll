@@ -1,13 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../sequelize-client");
 
+
 class Poll extends Model {}
 
 Poll.init({
-  title: {
-    type: DataTypes.TEXT,
-    allowNull: false
-  },
+
   question:{
     type: DataTypes.TEXT,
     allowNull: false
@@ -28,6 +26,7 @@ Poll.init({
     type: DataTypes.INTEGER,
     allowNull: false
   }
+
 
 }, {
   sequelize,
