@@ -8,9 +8,9 @@ const mainController = {
     try{    
       req.session.guest = true
       const polls = await Poll.findAll({
+        order: ["title"],
         include: [
           {
-            order: ["title"],
             association: "author",
             attributes: ["pseudo"]
           }
@@ -30,7 +30,7 @@ const mainController = {
     const pollId = Number(req.body.id);
     
     if(!choice) {
-      res.render('index', { errorMessage: "Please make a choice on the poll before submitting it" });
+      res.render('index', { errorMessage: "Please make a choice on the poll before submitting it", pollId });
       return;
     } else {       
         await Poll.increment(choice, { 
