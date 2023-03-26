@@ -475,6 +475,27 @@ main {
     padding: 4rem;
 }
 
+.create-category-select {
+    border: 2px solid black;
+    border-top-left-radius: 15px 255px ;
+    border-top-right-radius: 240px 25px;
+    border-bottom-left-radius: 22px 215px;
+    border-bottom-right-radius: 255px 15px;
+    padding: .5rem;
+}
+
+.poll-footer-create {
+    flex-direction: column;
+}
+
+.poll-footer-create button {
+    border: 2px solid black;
+    border-top-left-radius: 15px 255px ;
+    border-top-right-radius: 240px 25px;
+    border-bottom-left-radius: 22px 215px;
+    border-bottom-right-radius: 255px 15px;
+}
+
 /* BEFORE QUERIES */
 
 .header-images-burger {
@@ -488,9 +509,6 @@ main {
     justify-content: space-around;
     flex-wrap: wrap;
 }
-  
-
-
 .poll-category-list {
     display: flex;
     gap: 4rem;
@@ -541,8 +559,6 @@ main {
 	background-color: var(--border-color-article);
 	border-radius: 10px;
 }
-
-
 
 .before, .after {
     width: 80%;
@@ -600,6 +616,18 @@ main {
     display: flex;
     gap: 1rem;
     margin: 1rem 2rem;
+}
+
+/* STYLE PROFIL PAGE */
+
+.profil-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profil-polls {
+    font-size: 4rem;
 }
 
 @media screen and (max-width: 1100px) {

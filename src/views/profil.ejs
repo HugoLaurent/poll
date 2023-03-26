@@ -1,5 +1,50 @@
 <%- include('./partials/header') %>
 
+
+<section class="profil-page">
+    <article class="poll-container">
+            <% const pourcentA = 404 %>
+            <% const pourcentB = 0 %>
+        <div class="poll-header">
+            <h2 class="poll-header-title">My Profil</h2>
+        </div>
+        <p class="poll-question">John Doe</p>
+    
+            <div class="poll-wrapper">
+                <input class="poll-wrapper-checkbox" type="checkbox" id="first" name="choice" value="result_a">
+                <div class="poll-progressbar-wrapper">
+                    <div class="poll-progressbar" style="width: <%=pourcentA%>%" title="first_choice">
+                        <p class="poll-progressbar">You Created xxx polls</p>
+                    </div>
+                </div>
+                <span class="poll-progressbar-pourcent"><%=pourcentA%>%</span>
+            </div>
+            <div class="poll-wrapper">
+                <input class="poll-wrapper-checkbox" type="checkbox" id="second" name="choice" value="result_b">
+                <div class="poll-progressbar-wrapper">
+                    <div class="poll-progressbar" style="width: 100%" title="second_choice" >
+                        <p>You got xxx answers</p>
+                    </div>
+                </div>
+                <span class="poll-progressbar-pourcent"><%=pourcentB%>%</span>
+            </div>
+        <div class="poll-footer">
+            <div class="poll-footer-share">
+                <img class="share-button" src="/images/share.svg" alt="">
+                <span class="coming-soon"></span>
+                <input type="hidden" id="id" name="id" value="<%=404%>">
+            </div>
+            <p class="poll-footer-vote">Member since the xxx</p>
+        </div>
+    
+    </article>
+        <section class="profil-polls">
+            Ici on affiche les polls des gens
+        </section>
+    
+</section>
+
+
  <!-- POP UP FOR THE SIGN UP FORM -->
  <%- include('partials/signup.ejs') %>
 

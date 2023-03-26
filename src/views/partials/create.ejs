@@ -5,10 +5,44 @@
         <form method="POST" action="/create">
             <% const pourcentA = 0 %>
             <% const pourcentB = 0 %>
-            <div class="poll-header"> 
-                <input class="create-input create-input-title" placeholder="Your Title" type="text" name="title" id="title-create" >
+            <div class="poll-header">
+                <select class="create-category-select">
+                    <option value="category">Category</option>
+                    <option value="1">Amour</option>
+                    <option value="2">Argent</option>
+                    <option value="3">Art</option>
+                    <option value="4">Au quotidien</option>
+                    <option value="5">Automobile</option>
+                    <option value="6">Bricolage</option>
+                    <option value="7">Cinéma</option>
+                    <option value="8">Culture</option>
+                    <option value="9">Écologie</option>
+                    <option value="10">Espace</option>
+                    <option value="11">Études</option>
+                    <option value="12">Gastronomie</option>
+                    <option value="13">Géographie</option>
+                    <option value="14">Grammaire</option>
+                    <option value="15">Humour</option>
+                    <option value="16">Jardinage</option>
+                    <option value="17">Jeux</option>
+                    <option value="18">Marques</option>
+                    <option value="19">Musique</option>
+                    <option value="20">Nature</option>
+                    <option value="21">Philosophie</option>
+                    <option value="22">Politique</option>
+                    <option value="23">Sciences</option>
+                    <option value="24">Sexualité</option>
+                    <option value="25">Sport</option>
+                    <option value="26">Technologie</option>
+                    <option value="27">Top</option>
+                    <option value="28">Transport</option>
+                    <option value="29">Travail</option>
+                    <option value="30">Voyages</option>
+                </select> 
+                <!-- <input class="create-input create-input-title" placeholder="Your Title" type="text" name="title" id="title-create" > -->
             </div>
             <input class="create-input create-input-question" placeholder="Your Question" type="text" name="question" id="question-create" autofocus>
+          
             <div class="poll-wrapper">
                 <div class="poll-progressbar-wrapper">
                     <div class="poll-progressbar" style="width: <%=pourcentA%>%" title="first_choice">
@@ -26,12 +60,13 @@
                 <span class="poll-progressbar-pourcent"><%=pourcentB%>%</span>
             </div>   
             <input type="hidden" text="text" name="user_id" id="id" value="<%=locals.userId %>">            
-            <div class="poll-footer">
-                    <span class="create-poll-counter"> <%= locals.totalPoll %> polls already created and <%= totalVote %> submit</span>
-                <% if (locals.user) { %>                             
-                    <button class="article-button" type="submit">Validate</button>
-                <% } %> 
-            </div>
+            <div class="poll-footer poll-footer-create">
+                    <span class="create-poll-counter"> <%= locals.totalPoll %> polls already created and <%= totalVote %> votes</span>
+                    <% if (locals.user) { %>                             
+                        <button class="article-button" type="submit">Validate</button>
+                    <% } %> 
+            </div> 
+           
             <% if (!locals.user) { %>
                 <p class="create-form-warning">You need to sign up before creating a poll</p>
             <% } %>
