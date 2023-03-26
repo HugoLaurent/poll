@@ -23,14 +23,16 @@ router.post('/signup', userAuthController.handleSignUpForm);
 router.get('/login', mainController.homePage);
 router.post('/login', userAuthController.handleLoginForm);
 
-
-
 //Route pour polls
 router.get('/polls', mainController.pollPage);
 
 //Route pour create Poll
 router.get('/create', mainController.homePage);
 router.post('/create', pollController.createPoll);
+
+//Route pour les admins
+router.get('/member', mainController.homeMemberPage);
+
 
 //Route pour les admins
 router.get('/dashboard', isAdmin, adminController.homeAdminPage);

@@ -92,7 +92,7 @@ header {
     visibility: hidden;
 }
 
-label {
+.label-switch {
     cursor: pointer;
     width: 70px;
     height: 40px;
@@ -102,7 +102,7 @@ label {
     position: relative;
 }
 
-label:after {
+.label-switch:after {
     content: '\002600';
     position: absolute;
     top: -3px;
@@ -114,7 +114,7 @@ label:after {
 }
 
 
-.dark-theme-switch:checked + label:after {
+.dark-theme-switch:checked + .label-switch:after {
     content: '\1F319';
     filter: grayscale(1);
     left: calc(100% - 5px);
@@ -572,6 +572,34 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* STYLE ADMIN PAGE */
+
+.admin-page-title {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.admin-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-selection-title {
+    margin: 2rem;
+    font-size: 2rem;
+}
+
+.admin-form-poll {
+    margin-bottom: 2rem;
+}
+
+.admin-form-validation {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 2rem;
 }
 
 @media screen and (max-width: 1100px) {

@@ -23,6 +23,9 @@
             <ul class="header-navbar">
                 <li class="navbar-button home-button"><a href="/">Home</a></li>
                 <li class="navbar-button"><a href="/polls">Polls</a></li>
+                <% if (locals.user && locals.user.role === "member") { %>
+                    <li class="navbar-button"><a class="navbar-admin" href="/member">Profil</a></li>
+                  <% } %>
 
                 <% if (locals.user && locals.user.role === "admin") { %>
                     <li class="navbar-button"><a class="navbar-admin" href="/dashboard">Admin</a></li>
@@ -38,7 +41,7 @@
                 <form action="" method="POST">
                     <li class="header-navbar-switch-container">
                         <input class="dark-theme-switch" type="checkbox" id="switch"/>
-                        <label for="switch"></label>
+                        <label class="label-switch" for="switch"></label>
                     </li>
                 </form> 
             </ul>

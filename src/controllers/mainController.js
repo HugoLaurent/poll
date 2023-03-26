@@ -44,6 +44,10 @@ const mainController = {
 
   async pollPage(req, res) {
     res.render('poll');
+  },
+
+  async homeMemberPage(req, res) {
+    res.render('profil');
   }
 
 };
