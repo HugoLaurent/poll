@@ -4,19 +4,23 @@ const mainController = {
 
   // méthode pour la page d'accueil
   async homePage(req, res) {
-    
-    try{    
-      req.session.guest = true
+
+    try{
+      req.session.guest = true;
       const polls = await Poll.findAll({
+        order: ["result_a"],
         include: [
           {
-            order: ["title"],
             association: "author",
             attributes: ["pseudo"]
+          },
+          {
+            association: "category",
+            attributes: ["name"]
           }
         ]
       });
-      
+
       res.render("index", {polls});
       //console.log(req.session);
     } catch (error) {
@@ -28,26 +32,22 @@ const mainController = {
 
     const choice = req.body.choice;
     const pollId = Number(req.body.id);
-    
+
     if(!choice) {
       res.render('index', { errorMessage: "Please make a choice on the poll before submitting it" });
       return;
-    } else {       
-        await Poll.increment(choice, { 
-          where: { 
-            id: pollId 
-          }});  
-        res.locals.votes.push(pollId);          
-        res.redirect('/');
+    } else {
+      await Poll.increment(choice, { 
+        where: {
+          id: pollId
+        }});
+      res.locals.votes.push(pollId);
+      res.redirect('/');
     }
   },
 
   async pollPage(req, res) {
     res.render('poll');
-  },
-
-  async homeMemberPage(req, res) {
-    res.render('profil');
   }
 
 };

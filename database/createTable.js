@@ -1,9 +1,12 @@
-const { User, Poll } = require('../src/models');
+const { User, Poll, Category } = require('../src/models');
+
 
 
 async function createTables() {
+  await Category.sync();
   await User.sync();
   await Poll.sync();
+ 
 }
 
 

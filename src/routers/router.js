@@ -31,7 +31,7 @@ router.get('/create', mainController.homePage);
 router.post('/create', pollController.createPoll);
 
 //Route pour les admins
-router.get('/member', mainController.homeMemberPage);
+/* router.get('/member', mainController.homeMemberPage); */
 
 
 //Route pour les admins
