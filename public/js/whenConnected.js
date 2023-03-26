@@ -2,6 +2,9 @@
 function popUp(a, b) {
     a.addEventListener('click', () => {
         b.classList.toggle('form-container_show')
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"});
     })
 };
 

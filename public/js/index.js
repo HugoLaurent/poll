@@ -55,14 +55,10 @@ switchDarkMode.addEventListener('click', () => {
     toDarkMode('.form-container','dark-article')
     toDarkMode('.create-input-question', 'dark-a')
     toDarkMode('.create-input-title', 'dark-a')
+    toDarkMode('.category-page', 'dark-category')
 });
 
-// CATEGOIES TO APPEAR 
-
-
-
-
-
+// CATEGOIES SCROLL BEHAVIOR
 const horizontalScroll = document.querySelector('.horizontal-scroll');
 horizontalScroll.addEventListener('wheel', function(event) {
   event.preventDefault()

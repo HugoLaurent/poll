@@ -7,6 +7,11 @@
     border: 3px solid var(--border-color-night);
 }
 
+.dark-category {
+    background-color: var(--body-bg-night);
+    color: var(--text-color-night);
+}
+
 .dark-button {
     color: white;
 }
