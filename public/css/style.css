@@ -92,7 +92,7 @@ header {
     visibility: hidden;
 }
 
-label {
+.label-switch {
     cursor: pointer;
     width: 70px;
     height: 40px;
@@ -102,7 +102,7 @@ label {
     position: relative;
 }
 
-label:after {
+.label-switch:after {
     content: '\002600';
     position: absolute;
     top: -3px;
@@ -114,7 +114,7 @@ label:after {
 }
 
 
-.dark-theme-switch:checked + label:after {
+.dark-theme-switch:checked + .label-switch:after {
     content: '\1F319';
     filter: grayscale(1);
     left: calc(100% - 5px);
@@ -475,6 +475,27 @@ main {
     padding: 4rem;
 }
 
+.create-category-select {
+    border: 2px solid black;
+    border-top-left-radius: 15px 255px ;
+    border-top-right-radius: 240px 25px;
+    border-bottom-left-radius: 22px 215px;
+    border-bottom-right-radius: 255px 15px;
+    padding: .5rem;
+}
+
+.poll-footer-create {
+    flex-direction: column;
+}
+
+.poll-footer-create button {
+    border: 2px solid black;
+    border-top-left-radius: 15px 255px ;
+    border-top-right-radius: 240px 25px;
+    border-bottom-left-radius: 22px 215px;
+    border-bottom-right-radius: 255px 15px;
+}
+
 /* BEFORE QUERIES */
 
 .header-images-burger {
@@ -488,9 +509,6 @@ main {
     justify-content: space-around;
     flex-wrap: wrap;
 }
-  
-
-
 .poll-category-list {
     display: flex;
     gap: 4rem;
@@ -542,8 +560,6 @@ main {
 	border-radius: 10px;
 }
 
-
-
 .before, .after {
     width: 80%;
     margin: 0 auto;
@@ -572,6 +588,46 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* STYLE ADMIN PAGE */
+
+.admin-page-title {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.admin-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-selection-title {
+    margin: 2rem;
+    font-size: 2rem;
+}
+
+.admin-form-poll {
+    margin-bottom: 2rem;
+}
+
+.admin-form-validation {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 2rem;
+}
+
+/* STYLE PROFIL PAGE */
+
+.profil-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profil-polls {
+    font-size: 4rem;
 }
 
 @media screen and (max-width: 1100px) {

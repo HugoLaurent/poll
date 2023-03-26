@@ -1,46 +1,52 @@
 <%- include('./partials/header') %>
 
-<main>
-    <p></p>
-    <h1 style="display: block; justify-content: none; text-align: ;">Bienvenue sur le Tableau de controle de Poll</h1>
-    
-            
-        <form action='/dashboard' method='post'>
-            <label style="padding: 10px 60px;" for="selectUser">Choice User :</label>
-            <select style="width: 150px; height: 50px;" name="selectUser" id="selectUser">
-                <option value="">Select User</option>               
-                <% for(user of users) {%>
-                  <option value="<%= user.id %>"><%= user.pseudo %></option>
-               <% } %>
-            </select>
-            <br><br>
-            <label style="padding: 10px 60px;" for="selectRole">Choice Role :</label>
-            <select style="width: 150px; height: 50px;" name="selectRole" id="selectRole">
-               <option value="">Select Role</option>
-               <option value="admin">Admin</option>              
-               <option value="member">User</option>
-            </select>
-            <br><br>
+
+    <h1 class="admin-page-title" style="display: block; justify-content: none; text-align: ;">Bienvenue sur le Tableau de controle de Poll</h1>
+
+<section class="admin-page">
+    <form class="admin-form-user" action='/dashboard' method='post'>
+        <label class="admin-selection-title" for="selectUser">Choice User :</label>
+        <select name="selectUser" id="selectUser">
+            <option value="">Select User</option>
+            <% for(user of users) {%>
+                <option value="<%= user.id %>"><%= user.pseudo %></option>
+            <% } %>
+        </select>
+        
+        <label class="admin-selection-title" for="selectRole">Choice Role :</label>
+        <select name="selectRole" id="selectRole">
+            <option value="">Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="member">User</option>
+        </select>
+        <div class="admin-form-validation">
             <button class="article-button" type="submit">Validate</button>
-    </form> 
-    <h2 style="color:green"><% if(locals.message1) { %>
-        <p><%= message1 %></p>
-        <% } %></h2>
-   
-    <form action='/pollDelete' method='post'>
-        <label style="padding: 10px 60px;" for="selectUser">Choice poll</label>
-        <select style="width: 150px; height: 50px;" name="selectPoll" id="selectPoll">
+            <h2 style="color:green">
+                <% if(locals.message1) { %>
+                <p><%= message1 %></p>
+                <% } %>
+            </h2>
+        </div>
+    </form>
+
+    <form class="admin-form-poll" action='/pollDelete' method='post'>
+        <label class="admin-selection-title" for="selectUser">Choice poll</label>
+        <select name="selectPoll" id="selectPoll">
             <option value="">Select Poll</option>
             <% for(poll of locals.polls) {%>
-              <option value="<%= poll.id %>"><%= poll.question %></option>
-           <% } %>
+                <option value="<%= poll.id %>"><%= poll.question %></option>
+            <% } %>
         </select>
-        <br><br>        
-        <button class="article-button" type="submit">Delete</button>
+        <div class="admin-form-validation">
+            <button class="article-button" type="submit">Delete</button>
+            <h2 style="color: green;"><% if(locals.message2) { %>
+                <p><%= message2 %></p>
+            <% } %>
+            </h2>
+        </div>
+    </form>
 
-        <h2 style="color: green;"><% if(locals.message2) { %>
-            <p><%= message2 %></p>
-            <% } %></h2>
-</main>
+</section>
+
 
 
