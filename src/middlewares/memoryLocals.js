@@ -1,4 +1,4 @@
-const { Poll } = require("../models");
+const { Poll, Category } = require("../models");
 
 const loadToLocals = async (req,res,next) =>{
   if(req.session){
@@ -14,15 +14,22 @@ const loadToLocals = async (req,res,next) =>{
     res.locals.userId = req.session.userId;
 
     const polls = await Poll.findAll({
+      order: ["result_a"],
       include: [
         {
-          order: ["title"],
           association: "author",
           attributes: ["pseudo"]
+        },
+        {
+          association: "category",
+          attributes: ["name"]
         }
-      ]
+      ],
     });
     res.locals.polls = polls;
+
+    const category = await Category.findAll({});
+    res.locals.categorys = category;
 
     const totalPoll = await Poll.count();
     res.locals.totalPoll = totalPoll;

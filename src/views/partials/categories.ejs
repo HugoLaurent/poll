@@ -5,7 +5,7 @@
                 <% const pourcentA = Math.round((poll.result_a /(poll.result_a + poll.result_b)) * 100) %>
                 <% const pourcentB = Math.round((poll.result_b /(poll.result_a + poll.result_b)) * 100) %>
             <div class="poll-header">                
-                <h2 class="poll-header-title"><%= poll.title %></h2>
+                <h2 class="poll-header-title"><%= poll.category.name %></h2>
                 <p class="poll-header-author"><%= poll.author.pseudo %></p>
             </div>
             <p class="poll-question"><%= poll.question %></p>
