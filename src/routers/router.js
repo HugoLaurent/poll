@@ -42,9 +42,4 @@ router.post('/pollDelete', isAdmin,adminController.deletePoll);
 //Route pour logout
 router.get('/logout', userAuthController.logoutAndRedirect);
 
-
-
-
-
-
 module.exports = router;
