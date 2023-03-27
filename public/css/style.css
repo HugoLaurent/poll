@@ -529,11 +529,11 @@ main {
     width: fit-content;
 }
 
-.poll-category-list li:nth-child(odd):hover {
+.poll-category-list a:nth-child(odd):hover {
     color: #00b894;
 }
 
-.poll-category-list li:nth-child(even):hover {
+.poll-category-list a:nth-child(even):hover {
     color: #e17055;
 }
 
