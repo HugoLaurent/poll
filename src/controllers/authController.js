@@ -149,6 +149,7 @@ const userAuthController = {
   async logoutAndRedirect(req, res) {
     // On veut retirer le userId de la session
     req.session.userId = null;
+    req.session.userRole = null;
     res.redirect("/");
   }
 
