@@ -54,7 +54,9 @@
                 <button class="article-button" type="submit">Validate</button>
                 <% } %>  
             </div>
-            
+            <h2 style="color:red;"><% if(locals.errorMessage && locals.pollId === poll.id ) { %>
+                <p><%= errorMessage %></p>
+                <% } %></h2>
         </form>
         </article>
 <% } %> 

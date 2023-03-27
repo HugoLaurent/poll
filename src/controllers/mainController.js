@@ -34,7 +34,7 @@ const mainController = {
     const pollId = Number(req.body.id);
 
     if(!choice) {
-      res.render('index', { errorMessage: "Please make a choice on the poll before submitting it" });
+      res.render('index', { errorMessage: "Please make a choice on the poll before submitting it", pollId });
       return;
     } else {
       await Poll.increment(choice, { 
@@ -48,6 +48,10 @@ const mainController = {
 
   async pollPage(req, res) {
     res.render('poll');
+  },
+
+  async memberPage(req, res) {
+    res.render('profil');
   }
 
 };
