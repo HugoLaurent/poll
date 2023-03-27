@@ -73,8 +73,6 @@ header {
     border-bottom-right-radius: 15px 255px;
   }
 
-
-  
 .header-navbar li:hover:not(:last-child) {
     font-weight: bolder;
     box-shadow: 0 0 0 4px rgb(0, 0, 0);
@@ -112,7 +110,6 @@ header {
     border-radius: 90px;
     transition: 0.3s;
 }
-
 
 .dark-theme-switch:checked + .label-switch:after {
     content: '\1F319';
@@ -446,6 +443,10 @@ main {
 }
 
 /* CREATE FORM */
+
+.create-container {
+    padding: 3rem;
+}
 
 .create-input {
     background-color: transparent;
