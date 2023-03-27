@@ -1,0 +1,9 @@
+---
+deploy:
+  tasks:
+    - export DEPLOYPATH=/home/jamn7947/poll
+    - /bin/cp -R * $DEPLOYPATH
+    - /usr/local/cpanel/bin/safeapacherestart
+
+ 
+
