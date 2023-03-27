@@ -44,17 +44,25 @@
         </div>
     
     </article>
-    <h1 class="profil-page-title">My Polls</h1>             
+    <h1 class="profil-page-title">My Polls</h1> 
+    <% if (locals.messageDelete) { %>
+        <p><%= locals.messageDelete %></p>
+    <% } %>
+   
         <section class="poll-profil">
-            <% for(const poll of member.poll) { %>
-                <% console.log(poll) %>
+            <% for(const poll of member.poll) { %>               
                 <article class="poll-container">
-                        <form method="POST" action="/">
+                        
+                            
                             <% let pourcentA = Math.round((poll.result_a /(poll.result_a + poll.result_b)) * 100) %>
                             <% let pourcentB = Math.round((poll.result_b /(poll.result_a + poll.result_b)) * 100) %>
                         <div class="poll-header">
-                            <h2 class="poll-header-title"><%= poll.name %></h2>
-                            <button class="profil-delete-poll">Delete</button>
+                            <h2 class="poll-header-title"><%= poll.name %></h2>  
+                            <form method="POST" action="/member/<%= userId %>">  
+                                <input type="hidden" id="poll_id" name="poll_id" value="<%=poll.id%>">
+                                <input type="hidden" id="userPoll_id" name="userPoll_id" value="<%=userId%>">
+                                <button onclick="deleteEvent()" class="profil-delete-poll" type="submit">Delete</button>
+                            </form>
                         </div>
                         <p class="poll-question"><%= poll.question %></p>
             
@@ -95,12 +103,12 @@
                             <p class="poll-footer-vote"><%=poll.result_a + poll.result_b %> votes</p>
                             <% const votes = locals.votes %>
                             <% if(!votes.includes(poll.id)) {%>
-                            <button class="article-button" type="submit">Validate</button>
+                            
                             <% } %>
                         </div>
-                    </form>
+                    
                     </article>
-            <% } %>
+            <% } %>    
         </section>
 
 </section>

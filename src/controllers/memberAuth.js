@@ -24,8 +24,21 @@ async memberPage(req, res) {
     const answers = result.reduce((acc, curr) => acc + curr, 0); 
     
     res.render('profil', { member, createdPoll, answers });
-  }
+  },
   
+  async deletePollMember (req,res) {    
+    const id = req.body.poll_id;
+    const userId = req.body.userPoll_id;
+
+    const destroy = await Poll.destroy({
+      where: {
+        id: id
+      }});
+
+    res.redirect(`/member/${userId}`);
+  }
+
+
 
 }
 
