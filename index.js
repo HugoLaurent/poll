@@ -47,6 +47,8 @@ app.use(router);
 router.use(middleware404);
 
 // on lance le serveur
-app.listen(PORT, () => {
-  console.log(`Listening on ${PORT}`);
-});
+if (typeof(PhusionPassenger) !== 'undefined') {
+  app.listen('passenger');
+} else {
+  app.listen(process.env.PORT);
+}
