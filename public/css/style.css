@@ -571,6 +571,8 @@ main {
     position: relative;
 }
 
+
+
 .before::after{
     content: '>';
     font-size: 4rem;
@@ -578,8 +580,10 @@ main {
     position: absolute;
     bottom: 20px;
     right: -40px;
-    
 }
+
+
+
 .after::before{
     content: '<';
     font-size: 4rem;
@@ -588,6 +592,7 @@ main {
     bottom: 20px;
     left: -60px;
 }
+
 
 .partials-flex {
     display: flex;
@@ -691,6 +696,7 @@ main {
     .before, .after {
         display: none;
     }
+    
 
     .author-poll {
         flex-direction: column;
