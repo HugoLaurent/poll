@@ -29,7 +29,7 @@ const loadToLocals = async (req,res,next) =>{
     res.locals.polls = polls;
 
     const category = await Category.findAll({});
-    res.locals.categorie = category;
+    res.locals.categories = category;
 
     const totalPoll = await Poll.count();
     res.locals.totalPoll = totalPoll;
