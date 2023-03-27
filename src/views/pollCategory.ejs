@@ -48,10 +48,12 @@
                                 <p class="poll-progressbar"><%= poll.choice_a %></p>
                             </div>
                         </div>
-                        <% if (isNaN(pourcentA)) { %>
-                            <% pourcentA = 0 %>
-                        <%}%>
-                        <%=pourcentA%>%
+                        <span class="poll-footer-vote">
+                            <% if (isNaN(pourcentA)) { %>
+                                <% pourcentA = 0 %>
+                            <%}%>
+                            <%=pourcentA%>%
+                        </span>
                     </div>
                     <div class="poll-wrapper">
                         <input class="poll-wrapper-checkbox" type="checkbox" id="second" name="choice" value="result_b">          
@@ -60,10 +62,12 @@
                                 <p><%= poll.choice_b %></p>
                             </div>
                         </div>
-                        <% if (isNaN(pourcentA)) { %>
-                            <% pourcentA = 0 %>
-                        <%}%>
-                        <%=pourcentA%>%
+                        <span class="poll-footer-vote">
+                            <% if (isNaN(pourcentA)) { %>
+                                <% pourcentA = 0 %>
+                            <%}%>
+                            <%=pourcentA%>%
+                        </span>
                     </div>               
                 <div class="poll-footer">
                     <div class="poll-footer-share">
