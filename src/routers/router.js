@@ -28,6 +28,7 @@ router.post('/login', userAuthController.handleLoginForm);
 //Route pour polls
 router.get('/polls', mainController.pollPage);
 router.get('/polls/:id', pollController.getPollByCategories);
+router.post('/polls', pollController.getPollByCategoriesPhone);
 
 //Route pour create Poll
 router.get('/create', mainController.homePage);

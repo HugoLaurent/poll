@@ -1,11 +1,11 @@
 <%- include('./partials/header') %>
 
-<form class="category-select" action="">
+<form class="category-select" action="" method="POST">
     <select name="tag_id" class="poll-category-select">
         <%for (const category of categories) { %>
-            <option value="<%= category.id %>"><%= category.name %></option>
-             <% } %>
-    </select>
+            <option name ="tag_id" id="tag_id" value="<%= category.id %>"><%= category.name %></option>
+         <% } %>
+     </select>
     <button>Go</button>
 </form>
 
