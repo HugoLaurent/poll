@@ -1,6 +1,0 @@
-deploy:
-  repo: https://github.com/HugoLaurent/poll.git
-  branch: main
-  path: http://jamn7947.odns.fr/poll/
-  pre_deploy:
-    - npm install
