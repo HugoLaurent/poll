@@ -28,7 +28,7 @@ const loadToLocals = async (req,res,next) =>{
     });
     res.locals.polls = polls;
 
-    const category = await Category.findAll({});
+    const category = await Category.findAll({order:["name"]});
     res.locals.categories = category;
 
     const totalPoll = await Poll.count();
