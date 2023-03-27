@@ -1,11 +1,11 @@
 const dotenv = require("dotenv/config");
-dotenv.config();
+
 
 const { Sequelize } = require('sequelize');
 
 // Ceci est une instance de connexion à la BDD Postgres (c'est notre "client")
 const sequelize = new Sequelize( {
-  username: 'jamn7947_userPoll',
+  username: process.env.DB_USER,
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,
   host: process.env.DB_HOSTNAME,
