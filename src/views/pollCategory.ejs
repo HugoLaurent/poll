@@ -29,8 +29,7 @@
         </div>
 </div>
 <section class="partials-flex">
-    <% for(const poll of categoryPolls.poll) { %>
-        <% console.log(poll) %>
+    <% for(const poll of categoryPolls.poll) { %>       
         <article class="poll-container">
                 <form method="POST" action="/">
                     <% let pourcentA = Math.round((poll.result_a /(poll.result_a + poll.result_b)) * 100) %>

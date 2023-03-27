@@ -25,6 +25,10 @@ Poll.init({
   result_b:{
     type: DataTypes.INTEGER,
     allowNull: false
+  },
+  resultTotal:{
+    type: DataTypes.INTEGER,
+    allowNull: false
   }
 
 

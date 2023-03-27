@@ -8,7 +8,7 @@ const mainController = {
     try{
       req.session.guest = true;
       const polls = await Poll.findAll({
-        order: ["result_a"],
+        order: [["resultTotal", "DESC"]],
         include: [
           {
             association: "author",
@@ -30,7 +30,7 @@ const mainController = {
 
   async addVote(req, res) {
 
-    const choice = req.body.choice;
+    const choice = req.body.choice;  
     const pollId = Number(req.body.id);
 
     if(!choice) {
@@ -41,6 +41,10 @@ const mainController = {
         where: {
           id: pollId
         }});
+        await Poll.increment("resultTotal", { 
+          where: {
+            id: pollId
+          }});
       res.locals.votes.push(pollId);
       res.redirect('/');
     }
@@ -50,9 +54,6 @@ const mainController = {
     res.render('poll');
   }
   
-
 };
 
-
 module.exports = mainController;
-

@@ -14,7 +14,7 @@ const loadToLocals = async (req,res,next) =>{
     res.locals.userId = req.session.userId;
 
     const polls = await Poll.findAll({
-      order: ["result_a"],
+      order: [["resultTotal", "DESC"]],
       include: [
         {
           association: "author",

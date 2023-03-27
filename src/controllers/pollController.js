@@ -27,6 +27,7 @@ const pollController = {
       user_id: user_id,
       result_a: 0,
       result_b: 0,
+      resultTotal: 0,
 
     }),
     res.redirect("/");
@@ -36,14 +37,17 @@ const pollController = {
     const categoryId = req.params.id;
 
     const categoryPolls = await Category.findByPk(categoryId,{
-      include:[{
-        model: Poll,
+      
+      include:[{        
+        model: Poll,        
         as: "poll",
+        
         include:[{
           association: "author",
           attributes: ["pseudo"]
         }]
-      }]
+      }],
+      order:[["poll", 'resultTotal', 'DESC']]
     });
 
     res.render('pollCategory', { categoryPolls })
@@ -60,7 +64,8 @@ const pollController = {
           association: "author",
           attributes: ["pseudo"]
         }]
-      }]
+      }],
+      order:[["poll", 'resultTotal', 'DESC']]
     });
   
     res.render('pollCategory',  { categoryPolls } )

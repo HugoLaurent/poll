@@ -39,10 +39,10 @@ async function populateTables(){
     {name:"Travel"},
   ]);
   await Poll.bulkCreate([
-    {question: "Vous voulez vos mugs ?",choice_a: "Non",choice_b:"Non",result_a: 0, result_b:0, user_id: 2, tag_id: 3},
-    {question: "Pc ou Mac?",choice_a: "PC",choice_b:"MAc",result_a: 0, result_b:0, user_id: 1, tag_id: 2},
-    {question: "Pour ou contre le 49.3",choice_a: "Oui",choice_b:"Oui",result_a: 0, result_b:0, user_id: 3,tag_id: 1},
-    {question: "Pour ou contre la réforme des retraites",choice_a: "Oui",choice_b:"Oui",result_a: 0, result_b:0, user_id: 3, tag_id:1},
+    {question: "Vous voulez vos mugs ?",choice_a: "Non",choice_b:"Non",result_a: 0, result_b:0, resultTotal:0, user_id: 2, tag_id: 3},
+    {question: "Pc ou Mac?",choice_a: "PC",choice_b:"MAc",result_a: 0, result_b:0, resultTotal:0, user_id: 1, tag_id: 2},
+    {question: "Pour ou contre le 49.3",choice_a: "Oui",choice_b:"Oui",result_a: 0, result_b:0, resultTotal:0, user_id: 3,tag_id: 1},
+    {question: "Pour ou contre la réforme des retraites",choice_a: "Oui",choice_b:"Oui",result_a: 0, result_b:0, resultTotal:0, user_id: 3, tag_id:1},
   ]);
 
 
