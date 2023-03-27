@@ -79,10 +79,12 @@ const afterButton  = document.querySelector('.after');
 
 beforeButton.addEventListener('click', () => {
     horizontalScroll.scrollBy(100,0);
+    secondHorizontalScroll.scrollBy(-100,0);
 })
 
 afterButton.addEventListener('click', () => {
-    secondHorizontalScroll.scrollBy(-100,0);
+    horizontalScroll.scrollBy(-100,0);
+    secondHorizontalScroll.scrollBy(100,0);
 })
 
 // WHEN DELETE POLL ON PROFIL
