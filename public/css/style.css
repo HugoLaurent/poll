@@ -686,11 +686,17 @@ main {
         border-top-right-radius: 240px 25px;
         border-bottom-left-radius: 22px 215px;
         border-bottom-right-radius: 255px 15px;
-  }
+    }
 
-  .before, .after {
-    display: none;
-}
+    .before, .after {
+        display: none;
+    }
+
+    .author-poll {
+        flex-direction: column;
+        justify-content: center;
+    }
+
 }
 
 @media screen and (max-width:650px) {
@@ -810,9 +816,26 @@ main {
     }
 }
 
+@media screen and (max-width: 500px) {
+    
+    .header-navbar {
+        flex-direction: column;
+        gap: .1rem;
+    }
+
+}
+
 @media screen and (max-width: 375px) {
     
     .navbar-button a {
         font-size: 1.5rem;
+    }
+
+    .poll-question {
+        font-size: 1.5rem;
+    }
+
+    .poll-footer {
+        justify-content: space-between;
     }
 }
