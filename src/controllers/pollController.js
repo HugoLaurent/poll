@@ -45,8 +45,25 @@ const pollController = {
         }]
       }]
     });
-    console.log(categoryPolls)
+
     res.render('pollCategory', { categoryPolls })
+  },
+
+  async getPollByCategoriesPhone (req, res){    
+    const categoryId = req.body.tag_id;
+
+    const categoryPolls = await Category.findByPk(categoryId,{
+      include:[{
+        model: Poll,
+        as: "poll",
+        include:[{
+          association: "author",
+          attributes: ["pseudo"]
+        }]
+      }]
+    });
+  
+    res.render('pollCategory',  { categoryPolls } )
   }
 };
 
