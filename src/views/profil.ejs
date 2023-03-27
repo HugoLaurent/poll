@@ -9,6 +9,7 @@
             
             <h2 class="poll-header-title">My Profil</h2>
         </div>
+        <% console.log(member.created_at)%> 
         <p class="poll-question"><%= member.pseudo %></p>
     
             <div class="poll-wrapper">
@@ -35,7 +36,7 @@
                 <span class="coming-soon"></span>
                 <input type="hidden" id="id" name="id" value="<%=404%>">
             </div>
-            <p class="poll-footer-vote">Member since the xxx</p>
+            <p class="poll-footer-vote">Member since the <%= member.created_at%> </p>
         </div>
     
     </article>
