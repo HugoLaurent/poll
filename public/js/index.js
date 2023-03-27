@@ -64,6 +64,7 @@ horizontalScroll.addEventListener('wheel', function(event) {
   event.preventDefault()
   horizontalScroll.scrollLeft += event.deltaY;
   console.log(horizontalScroll.scrollLeft);
+  console.log(event.deltaY);
 });
 
 const secondHorizontalScroll = document.querySelector('.second-horizontal-scroll');
@@ -75,6 +76,14 @@ horizontalScroll.addEventListener('wheel', function(event) {
 
 const beforeButton = document.querySelector('.before');
 const afterButton  = document.querySelector('.after');
+
+beforeButton.addEventListener('click', () => {
+    horizontalScroll.scrollBy(100,0);
+})
+
+afterButton.addEventListener('click', () => {
+    secondHorizontalScroll.scrollBy(-100,0);
+})
 
 
 
