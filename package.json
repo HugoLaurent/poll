@@ -14,12 +14,12 @@
   },
   "name": "poll",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "db:create": "psql -U poll -d poll -f database/data_polls.sql",
-    "db:populate": "psql -U poll -d poll -f database/data_populate_polls.sql",
+    "db:create": "node database/createTable.js",
+    "db:populate": "node database/createPopulate.js",
     "db:reset": "npm run db:create && npm run db:populate"
   },
   "repository": {
