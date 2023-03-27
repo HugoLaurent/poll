@@ -50,7 +50,7 @@ router.use(middleware404);
 if (typeof(PhusionPassenger) !== 'undefined') {
   app.listen('passenger');
 } else {
-  app.listen(app.listen(PORT, () => {
+ app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`);
-}));
+});
 }
