@@ -79,24 +79,13 @@ const afterButton  = document.querySelector('.after');
 
 beforeButton.addEventListener('click', () => {
     horizontalScroll.scrollBy(100,0);
-    secondHorizontalScroll.scrollBy(-100,0);
 })
 
 afterButton.addEventListener('click', () => {
-    horizontalScroll.scrollBy(-100,0);
-    secondHorizontalScroll.scrollBy(100,0);
+    secondHorizontalScroll.scrollBy(-100,0);
 })
 
-// WHEN DELETE POLL ON PROFIL
-const parentForDelete = document.querySelector('.poll-profil');
-const buttonDelete    = document.querySelector('.profil-delete-poll');
-
-
-
- function deleteEvent() {
-    console.log(parentForDelete, buttonDelete);
- }
-
+// 
 
 
 
