@@ -9,7 +9,7 @@
             
             <h2 class="poll-header-title">My Profil</h2>
         </div>
-        <% console.log(member.created_at)%> 
+        
         <p class="poll-question"><%= member.pseudo %></p>
     
             <div class="poll-wrapper">
@@ -36,7 +36,11 @@
                 <span class="coming-soon"></span>
                 <input type="hidden" id="id" name="id" value="<%=404%>">
             </div>
-            <p class="poll-footer-vote">Member since the <%= member.created_at%> </p>
+            <%const date1 = new Date(member.created_at);%>
+            <%const date2 = new Date();%>
+            <%const diffTime = date2.getTime() - date1.getTime();%> 
+            <%const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));%> 
+            <p class="poll-footer-vote">Member since <%= diffDays%> days.</p>
         </div>
     
     </article>
