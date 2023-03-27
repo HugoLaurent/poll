@@ -635,6 +635,23 @@ main {
     font-size: 4rem;
 }
 
+.created-by {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.author-poll {
+    display: flex;
+    align-items: center;
+}
+
+.created-by img {
+    width: 2rem;
+    margin-left: .5rem;
+}
+
 @media screen and (max-width: 1100px) {
     
     header {
