@@ -48,11 +48,8 @@ const mainController = {
 
   async pollPage(req, res) {
     res.render('poll');
-  },
-
-  async memberPage(req, res) {
-    res.render('profil');
   }
+  
 
 };
 

@@ -1,4 +1,4 @@
-const { Poll } = require("../models");
+const { Poll, Category } = require("../models");
 
 
 
@@ -30,8 +30,24 @@ const pollController = {
 
     }),
     res.redirect("/");
-  }
+  },
 
+  async getPollByCategories (req, res){
+    const categoryId = req.params.id;
+
+    const categoryPolls = await Category.findByPk(categoryId,{
+      include:[{
+        model: Poll,
+        as: "poll",
+        include:[{
+          association: "author",
+          attributes: ["pseudo"]
+        }]
+      }]
+    });
+    console.log(categoryPolls)
+    res.render('pollCategory', { categoryPolls })
+  }
 };
 
 

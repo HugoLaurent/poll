@@ -7,7 +7,8 @@ const authentifyRequestMiddleware = async (req, res, next) => {
         req.user = user;
         res.locals.user= user;
     }
-    next();
+
+    next();   
 }
 
 

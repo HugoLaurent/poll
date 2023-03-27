@@ -12,7 +12,7 @@
         <div class="before">
             <section class="poll-category-list style-scroll horizontal-scroll">
                 <%for (const category of categories) { %> 
-                    <a value="<%= category.id %>"><%= category.name %></a>
+                    <a href="polls/<%= category.id %>"><%= category.name %></a>
                      <% } %>                
             </section>
         </div>
@@ -20,7 +20,7 @@
         <div class="after">
             <section class="poll-category-list style-scroll second-horizontal-scroll">
                 <%for (const category of categories) { %> 
-                    <a value="<%= category.id %>"><%= category.name %></a>
+                    <a href="polls/<%= category.id %> "><%= category.name %></a>
                      <% } %>
             </section>
         </div>
