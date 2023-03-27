@@ -206,7 +206,7 @@ main {
 }
 
 .poll-progressbar {
-    background-color: #D3E9E3;
+    background-color: transparent;
     color: white;
     padding-left: 1rem;
     text-align: right;
