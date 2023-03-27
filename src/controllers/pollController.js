@@ -31,7 +31,9 @@ const pollController = {
     }),
     res.redirect("/");
   }
-}
+
+};
+
 
 
 module.exports = pollController;
