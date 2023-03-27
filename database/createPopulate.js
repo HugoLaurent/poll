@@ -12,7 +12,7 @@ async function populateTables(){
     {name:"Art"},
     {name:"Daily life"},
     {name:"Automotive"},
-    {name:"Bricolage"},
+    {name:"DIY"},
     {name:"Cinema"},
     {name:"Culture"},
     {name:"Ecology"},

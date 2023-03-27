@@ -6,15 +6,16 @@
             <% const pourcentA = 0 %>
             <% const pourcentB = 0 %>
         <div class="poll-header">
+            
             <h2 class="poll-header-title">My Profil</h2>
         </div>
-        <p class="poll-question">John Doe</p>
+        <p class="poll-question"><%= member.pseudo %></p>
     
             <div class="poll-wrapper">
                 <input class="poll-wrapper-checkbox" type="checkbox" id="first" name="choice" value="result_a">
                 <div class="poll-progressbar-wrapper">
                     <div class="poll-progressbar" style="width: 100%" title="first_choice">
-                        <p class="poll-progressbar">You Created xxx polls</p>
+                        <p class="poll-progressbar">You Created <%= createdPoll  %> polls</p>
                     </div>
                 </div>
                 <span class="poll-progressbar-pourcent"><%=pourcentA%>%</span>
@@ -23,7 +24,7 @@
                 <input class="poll-wrapper-checkbox" type="checkbox" id="second" name="choice" value="result_b">
                 <div class="poll-progressbar-wrapper">
                     <div class="poll-progressbar" style="width: 100%" title="second_choice" >
-                        <p>You got xxx answers</p>
+                        <p>You got <%= answers %> answers</p>
                     </div>
                 </div>
                 <span class="poll-progressbar-pourcent"><%=pourcentB%>%</span>
