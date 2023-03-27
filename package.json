@@ -1,18 +1,4 @@
 {
-  "dependencies": {
-    "bcrypt": "^5.1.0",
-    "connect-pg-simple": "^8.0.0",
-    "dotenv": "^16.0.3",
-    "ejs": "^3.1.8",
-    "email-validator": "^2.0.4",
-    "express": "^4.18.2",
-    "express-session": "^1.17.3",
-    "pg": "^8.10.0",
-    "pg-protocol": "^1.6.0",
-    "postgres": "^3.3.4",
-    "psql": "^0.0.1",
-    "sequelize": "^6.29.3"
-  },
   "name": "poll",
   "version": "1.0.0",
   "main": "index.js",
@@ -33,5 +19,19 @@
     "url": "https://github.com/HugoLaurent/poll/issues"
   },
   "homepage": "https://github.com/HugoLaurent/poll#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@types/node": "^16.11.15",
+    "bcrypt": "^5.1.0",
+    "connect-pg-simple": "^7.0.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "pg": "^8.7.1",
+    "postgres": "^1.0.2",
+    "psql": "^0.0.1",
+    "sequelize": "^6.6.5"
+  }
 }
