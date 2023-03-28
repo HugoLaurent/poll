@@ -3,34 +3,12 @@
     "bcrypt": "^5.1.0",
     "connect-pg-simple": "^8.0.0",
     "dotenv": "^16.0.3",
-    "ejs": "^3.1.8",
+    "ejs": "^3.1.9",
     "email-validator": "^2.0.4",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "pg": "^8.10.0",
     "postgres": "^3.3.4",
-    "psql": "^0.0.1",
-    "sequelize": "^6.29.3"
-  },
-  "name": "poll",
-  "version": "1.0.0",
-  "main": "app.js",
-  "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js",
-    "db:create": "psql -U poll -d poll -f database/data_polls.sql",
-    "db:populate": "psql -U poll -d poll -f database/data_populate_polls.sql",
-    "db:reset": "npm run db:create && npm run db:populate"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HugoLaurent/poll.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/HugoLaurent/poll/issues"
-  },
-  "homepage": "https://github.com/HugoLaurent/poll#readme",
-  "description": ""
+    "sequelize": "^6.30.0"
+  }
 }
