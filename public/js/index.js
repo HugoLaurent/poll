@@ -79,9 +79,11 @@ const afterButton  = document.querySelector('.after');
 
 beforeButton.addEventListener('click', () => {
     horizontalScroll.scrollBy(100,0);
+    secondHorizontalScroll.scrollBy(-100,0);
 })
 
 afterButton.addEventListener('click', () => {
+    horizontalScroll.scrollBy(100,0);
     secondHorizontalScroll.scrollBy(-100,0);
 })
 
