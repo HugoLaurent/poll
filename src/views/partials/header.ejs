@@ -20,7 +20,11 @@
             <ul class="header-navbar">
                 <li class="navbar-button home-button"><a href="/">Home</a></li>
                 <li class="navbar-button"><a href="/polls">Polls</a></li>
-                <% if (locals.user && locals.user.role === "member" || "admin" ) { %>
+                <% if (locals.user && locals.user.role === "member" ) { %>
+                    <li class="navbar-button"><a class="navbar-admin" href="/member/<%= userId %>">Profil</a></li>
+                  <% } %>
+
+                  <% if (locals.user && locals.user.role === "admin" ) { %>
                     <li class="navbar-button"><a class="navbar-admin" href="/member/<%= userId %>">Profil</a></li>
                   <% } %>
 
